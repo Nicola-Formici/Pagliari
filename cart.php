@@ -81,6 +81,7 @@ function content(){
 
                         function remuve(item_id){
                             cart_remove(item_id, null );
+                            window.location.reload();
                         }
                         
                         function add(item_id){
