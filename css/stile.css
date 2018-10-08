@@ -1,0 +1,116 @@
+.form_accedi{
+	margin-top:8%;
+	margin-left:40%;
+	margin-right:40%;
+	margin-bottom:8%;
+}
+
+a.img_card{
+    height:25%;
+}
+
+p.info{
+	color:rgb(100,100,100) ;
+	font-size: 1rem;
+}
+
+img.img_secondarie{
+	width:100%;
+}
+
+.tab-img-details{
+	width:80%;
+	margin-left:10%;
+}
+
+.title-item{
+	font-size: 2rem;
+}
+
+.item-description , .option-item{
+	width:80%;
+	margin-left:10%;
+	margin-top:5%;
+	font-size: 1rem;
+}
+
+img.img-responsive{
+	width:60%;
+}
+
+p.description{
+	margin:0% !important;
+}
+
+label.error {
+	color: red;
+	font-style: italic;
+}
+	
+input.error {
+	border: 1px dotted red;
+}
+
+body {	
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.8rem;
+}
+
+img.img_mechanical{
+    width:90% !important;
+    margin:5%;
+}
+
+input.quantita{
+    width:50% !important;
+}
+
+@media (min-width: 800px){
+    body{
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1rem;
+    }
+}
+
+#figlio{
+	border: 0px solid rgba(0, 0, 0, 0.125);
+}
+
+#invia{
+	width:30%;
+	float:right;
+	margin-right:10%;
+}
+
+#button_registration{
+    width:60%;
+    margin-left:20%;
+}
+
+#img_prodotto{
+	width:100%;
+}
+
+#img_lavorazioni{
+	width:30%;
+	height:10%;
+}
+
+#button_acces{
+    text-align:center;
+}
+
+#checkout{
+    width:70%;
+    margin-left:15%;
+    margin-right:15%;
+}
+
+#div_registration, #div_cart{
+    margin-bottom:5%;
+    margin-top:3%;
+}
+
+#upload{
+    float:left;
+}
