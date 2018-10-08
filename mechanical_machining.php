@@ -137,9 +137,9 @@ function main(){
 									<p class="decriprion">		
 										Al.Pa.Car srl offre ai propri clienti esclusivamente servizi 
 										di altissima qualità, rispettando le norme di sicurezza imposte dalla legge. 
-										Impieghiamo lavoratori specializzati con anni di esperienza e utilizziamo di macchinari all'avanguardia,
-										la nostra azienda offre un rapporto qualità-prezzo incomparabile non solo negli 
-										interventi di piegatura delle lamiere, e in tutti gli altri tipi di lavorazione.
+										Impieghiamo lavoratori specializzati con anni di esperienza ed utilizziamo macchinari all'avanguardia.
+										La nostra azienda offre un rapporto qualità-prezzo incomparabile non solo negli 
+										interventi di piegatura delle lamiere ma anche in tutti gli altri tipi di lavorazione.
 									</p>
                                    
                                     <h5>Per un preventivo:</h5>	
