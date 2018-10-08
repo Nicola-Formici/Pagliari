@@ -246,7 +246,7 @@ function main(){
                 });		
 			</script>
 __end__;
-	return layout($content);
+	return layout($content, $title="", "Lavorazioni di carpenteria meccanica (foratura, piegatura, saldatura).");
 }
 			
 echo main();

@@ -1,7 +1,7 @@
 <?php
 include_once './lib/lib.php';
 function main(){
-	return layout(content());
+	return layout(content(), $title="", "");
 }
 
 function content(){

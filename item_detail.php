@@ -181,7 +181,7 @@ function main(){
 			  
 		</form>
 __end__;
-	return layout($content);
+	return layout($content, $title="", "");
 }
 		
 echo main();

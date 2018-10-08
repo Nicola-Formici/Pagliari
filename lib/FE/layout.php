@@ -1,12 +1,14 @@
 <?php
-function layout($content ) {
+function layout($content, $title= "Al.Pa.car", $description="" ) {
 	return <<<__end__
  
 <!doctype html>
 <html lang="en">
   <head>
 
-    <title>Al.Pa.car</title>
+    <title>$title</title>
+        <meta name="description" content="$description">
+    
 		<!--script navbar -->
 		
 		<script src="./js/jquery-3.3.1.js"></script>
