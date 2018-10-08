@@ -173,9 +173,6 @@ function main(){
 				</nav>
 			</div>
             
-            
-            <!-- script treeview -->
-            
             <script>
 
                 function add_button(item_id){

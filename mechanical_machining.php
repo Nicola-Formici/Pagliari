@@ -5,7 +5,7 @@ require_once './lib/lib.php';
 function main(){
 	// wrapping con contentuto rimanente
 	$content = <<<__end__
-		 	
+ 	
 			<div class="album py-5">
 				<div class="row">
 					<div class="col-12 col-lg-4">						
@@ -89,23 +89,7 @@ function main(){
 									</ul>
 								</li>
 							</ul>
-						</div>	
-						
-						<!-- script treeview -->
-						
-			
-						<script>
-							$("#treeview").hummingbird();
-							$( "#checkAll" ).click(function() {
-							  $("#treeview").hummingbird("checkAll");
-							});
-							$( "#uncheckAll" ).click(function() {
-							  $("#treeview").hummingbird("uncheckAll");
-							});
-							$( "#collapseAll" ).click(function() {
-							  $("#treeview").hummingbird("collapseAll");
-							});
-						</script>						
+						</div>								
 						</div>
 						<div class="col-12 col-lg-8">
 							
@@ -137,7 +121,7 @@ function main(){
 									<p class="decriprion">		
 										Al.Pa.Car srl offre ai propri clienti esclusivamente servizi 
 										di altissima qualità, rispettando le norme di sicurezza imposte dalla legge. 
-										Impieghiamo lavoratori specializzati con anni di esperienza ed utilizziamo macchinari all'avanguardia.
+										Impieghiamo lavoratori specializzati con anni di esperienza ed utilizziamo macchinari di ultima generazione.
 										La nostra azienda offre un rapporto qualità-prezzo incomparabile non solo negli 
 										interventi di piegatura delle lamiere ma anche in tutti gli altri tipi di lavorazione.
 									</p>
@@ -180,6 +164,19 @@ function main(){
 			</div>
 			
 			<script>
+                //script treeview
+					
+                $("#treeview").hummingbird();
+                $( "#checkAll" ).click(function() {
+                  $("#treeview").hummingbird("checkAll");
+                });
+                $( "#uncheckAll" ).click(function() {
+                  $("#treeview").hummingbird("uncheckAll");
+                });
+                $( "#collapseAll" ).click(function() {
+                  $("#treeview").hummingbird("collapseAll");
+                });
+
                 $('.without-caption').magnificPopup({
 					type: 'image',
 					closeOnContentClick: true,

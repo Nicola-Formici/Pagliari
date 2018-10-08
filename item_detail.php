@@ -89,22 +89,7 @@ function main(){
 								</li>
 							</ul>
 						</div>	
-						
-						<!-- script treeview -->
-						
-						
-						<script>
-							$("#treeview").hummingbird();
-							$( "#checkAll" ).click(function() {
-							  $("#treeview").hummingbird("checkAll");
-							});
-							$( "#uncheckAll" ).click(function() {
-							  $("#treeview").hummingbird("uncheckAll");
-							});
-							$( "#collapseAll" ).click(function() {
-							  $("#treeview").hummingbird("collapseAll");
-							});
-						</script>						
+										
 						</div>
 						<div class="col-12 col-lg-8">
 							<div class="container">	
@@ -150,7 +135,18 @@ function main(){
 				</div>
 			</div>
 			<script>
-			
+                //script treeview
+                
+                $("#treeview").hummingbird();
+                $( "#checkAll" ).click(function() {
+                  $("#treeview").hummingbird("checkAll");
+                });
+                $( "#uncheckAll" ).click(function() {
+                  $("#treeview").hummingbird("uncheckAll");
+                });
+                $( "#collapseAll" ).click(function() {
+                  $("#treeview").hummingbird("collapseAll");
+                });
 			
 				$('.without-caption').magnificPopup({
 					type: 'image',
