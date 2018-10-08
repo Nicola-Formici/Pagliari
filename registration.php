@@ -53,17 +53,11 @@ function main(){
 								<div class="row">
 									<div class="col-md-4 mb-3">
 										<label for="state">Provincia:&emsp;</label>
-										<select id="provincia" name="provincia" required>
-											<option value="">Seleziona</option>
-											<option>Mantova</option>
-										</select>
+										<input class="form-control" type="text" id="provincia" name="provincia" placeholder="" required>
 									</div>
 									<div class="col-md-5 mb-3">
 										<label for="country">Citta:&emsp;</label>
-										<select id="citta" name="citta" required>
-											<option value="">Seleziona</option>
-											<option>Casaletto</option>
-										</select>
+										<input class="form-control" type="text" id="citta" name="citta" placeholder="" required>
 									</div>
 									<div class="col-md-3 mb-3">
 										<label for="cap">CAP</label>
@@ -225,8 +219,8 @@ function main(){
 							required: "Inserisci numero di telefono",
 							digits: "Inserisci solo numeri"
 						},
-						provincia: "Scegli provincia",
-						citta: "Scegli città",
+						provincia: "Inserisci la provincia di residenza",
+						citta: "Inserisci la città di residenza",
 						cap:{
 							required: "Inserisci cap",
 							digits: "inserisci solo numeri"
