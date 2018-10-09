@@ -20,7 +20,7 @@ function main(){
 		    </div>
 		</form>
 __end__;
-	return layout($content, $title="", "");
+	return layout($content, $title="", "Vendita mezzi agricoli e lavorazioni di carpenteria meccanica.");
 }
 		
 echo main();
