@@ -72,8 +72,8 @@ function layout($content, $title= "Al.Pa.car", $description="" ) {
 		
 			<div class="navbar navbar-dark bg-light shadow-sm " >
 				<nav class="navbar navbar-light">
-					<a class="navbar-brand" href="./index.php">
-						<img src="./immagini/logo_pagliari.png" width="220" height="">
+					<a class="nav-link" href="./index.php">
+						Logo
 					</a>
 					<ul class="nav dropdown">
 						<li class="nav-item dropdown">
@@ -100,7 +100,7 @@ function layout($content, $title= "Al.Pa.car", $description="" ) {
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-md" style="margin-top:3%;">
-					<img class="mb-2" src=".\immagini\pagliari.png" width="50" height="50">
+					Logo
 				</div>
 				<div class="col-6 col-md" style="margin-top:3%;">
 					<h5>Contatti</h5>

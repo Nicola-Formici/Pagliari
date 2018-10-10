@@ -27,7 +27,7 @@ function content(){
     $content = <<<__END__
     <div class="container" style="margin-bottom:5%;">
       <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src=".\immagini\pagliari.png" alt="" width="72" height="72">
+        Logo
         <h2>Invio dell'ordine </h2>
         <p>Gentile cliente, ti chiediamo di controllare che i tuoi dati siano inseriti correttamente e di specificare l'indirizzo alla quale inviare l'ordine. Una volta ricevuto il bonifico la merce verrà spedita all'indirizzo indicato.<p>
       </div>
