@@ -2,46 +2,8 @@
 
 require_once './lib/lib.php';
 
-
-function card_item($item_id){
-	return 	 <<<__end__
-					<div class="col-6 col-lg-4">
-						<div class="card mb-4 shadow-sm">
-                            <div class="IE_div_card">
-                                <a class="img_card" href="item_detail.php"><img  class="card-img-top" src="./immagini/carribotte-B350.jpg" alt="Card image cap"></a>
-                            </div>
-                           
-							<div class="card-body">
-								<p class="card-text">
-									This is a wider card with supporting text below as a natural lead-in to additional content. 
-									This content is a little bit longer.
-								</p>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<span>Quantità:&emsp; </span>
-										<input class="quantita" type="number" name="quantita$item_id" value="1" step="1" min="1" style="width:50%">
-									</div >
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-light" onclick="add_button($item_id)"><i class="fas fa-cart-plus" ></i></button>
-                                        <button class="btn btn-danger btn-sm" onclick="remove_button($item_id)"><i class="far fa-trash-alt"></i></button>	
-                                    </div>
-								</div>
-							</div>
-						</div>
-					</div>           
-__end__;
-}
-
-
-//
 function main(){
-	// calcola le cards
-	$number = rand(1,20);
-	$html_cards = '';
-	for($i=0; $i<$number; $i++){
-		$html_cards .= card_item($i+1);
-	}
-	// wrapping con contentuto rimanente
+	
 	$content = <<<__end__
 			
 		 	
@@ -132,8 +94,7 @@ function main(){
 						</div>
 						<div class="col-12 col-lg-8">
 							<div class="container">						
-								<div class="row">
-								    $html_cards									
+								<div id="card_item"class="row">
 								</div>
 							</div>
 						</div>	
@@ -175,6 +136,56 @@ function main(){
                 $( "#collapseAll" ).click(function() {
                   $("#treeview").hummingbird("collapseAll");
                 });
+                
+                
+                
+                function print_item(msg,data){ 
+                    console.log(msg);
+                    console.log(data);
+                    console.log(data.length);
+                    
+                    for(index=0;index<data.length;index++){
+                            
+                            
+                            var id= data[index].codice;            
+                            var nome= data[index].nome;
+                            var descrizione= data[index].descrizione;                           
+                            var immagine= data[index].imgs[0];
+                            
+                            var quantita= data[index].binner;
+                            if(quantita==0){
+                                quantita=1;
+                            }
+                            console.log(quantita);
+                            
+                            content="";
+                            content +='<div class="col-6 col-lg-4">'
+                                content +='<div class="card mb-4 shadow-sm">'
+                                    content +='<div class="IE_div_card">'
+                                        content +='<a class="img_card" href="item_detail.php"><img  class="card-img-top" src="'+immagine+'"></a>'
+                                    content +='</div>'
+                                    content +='<div class="card-body">'
+                                        content +='<p class="card-text">'+descrizione+'</p>'
+                                        content +='<div class="d-flex justify-content-between align-items-center">'
+                                            content +='<div class="btn-group">'
+                                                content +='<span>Quantità:&emsp; </span>'
+                                                content +='<input class="quantita" type="number" name="quantita'+id+'" value="'+quantita+'" step="1" min="'+quantita+'" style="width:50%">'
+                                            content +='</div>'
+                                            content +='<div class="btn-group">'
+                                                content +='<button type="button" class="btn btn-light" onclick="add_button('+id+')"><i class="fas fa-cart-plus" ></i></button>'
+                                                content +='<button class="btn btn-danger btn-sm" onclick="remove_button('+id+')"><i class="far fa-trash-alt"></i></button>'
+                                            content +='</div>'
+                                        content +='</div>'
+                                    content +='</div>'
+                                content +='</div>'
+                            content +='</div>'
+                                
+                            document.getElementById("card_item").innerHTML += content;
+                    }
+                    
+                }
+                
+                item_page(page=1,print_item);
             </script>
 __end__;
 	return layout($content, $title="", "Vendita mezzi agricoli e lavorazioni di carpenteria meccanica.");

@@ -55,7 +55,7 @@ function layout($content, $title= "Al.Pa.car", $description="" ) {
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 		<script src="./js/json.js"></script>
-		<script src="./js/cart.js"></script>
+		<script src="./js/data.js"></script>
 		
 		<!--miei stili -->
 		
@@ -120,7 +120,7 @@ function layout($content, $title= "Al.Pa.car", $description="" ) {
 				<div class="col-6 col-md" style="margin-top:3%;">
 					<h5>Altre info</h5>
 					<ul class="list-unstyled text-small">
-						copyright © 2013 Al.Pa.Car - <a class="text-muted" href="./immagini/pdf/PAGLIARI-privacy.pdf" >Privacy Policy </a>
+						copyright © 2013 Al.Pa.Car - <a class="text-muted" href="#" >Privacy Policy </a>
 					
 					</ul>
 				</div>
