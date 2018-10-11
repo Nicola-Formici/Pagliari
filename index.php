@@ -56,13 +56,13 @@ function main(){
 											<ul class="list-group">
 												<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Acciaio
 													<ul class="list-group">
-														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 10mm </a></li>
+														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 10mm</a></li>
 														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 20mm</a></li>
 													</ul>
 												</li>
 												<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Acciaio Inox
 													<ul class="list-group">
-														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 10mm </a></li>
+														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 10mm</a></li>
 														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 20mm</a></li>
 													</ul>
 												</li>
@@ -72,13 +72,13 @@ function main(){
 											<ul class="list-group">
 												<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Acciaio
 													<ul class="list-group">
-														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 10mm </a></li>
+														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 10mm</a></li>
 														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 20mm</a></li>
 													</ul>
 												</li>
 												<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Acciaio Inox
 													<ul class="list-group">
-														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 10mm </a></li>
+														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 10mm</a></li>
 														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 20mm</a></li>
 													</ul>
 												</li>
@@ -88,7 +88,7 @@ function main(){
 											<ul class="list-group">
 												<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Acciaio
 													<ul class="list-group">
-														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 10mm </a></li>
+														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 10mm</a></li>
 														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 20mm</a></li>
 													</ul>
 												</li>

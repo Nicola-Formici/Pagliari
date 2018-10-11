@@ -3,5 +3,10 @@
 }
 
 div.IE_div_card{
-    height:25%;
+    height:30%;
+}
+
+#IE_body_card{
+    width:100%;
+    margin:0;
 }
