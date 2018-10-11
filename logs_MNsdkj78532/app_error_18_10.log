@@ -1,0 +1,45 @@
+[2018/10/10 12:57:34] OK test loggedin IP:192.168.1.81 url:/admin_v1/?
+[2018/10/10 15:35:49] OK test loggedin IP:192.168.1.81 url:/admin_v1/?
+[2018/10/10 15:49:04] LOGIN allowed for:test form:192.168.1.81
+[2018/10/10 15:49:06] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 15:49:06] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 15:49:06] file_put_contents(/var/www/html/pagliari/cache_LK0987dgejv/PAGLIARI_ItemsEditor_init_fields_18d8803d37043f0473caea6df6a59540_d751713988987e9331980363e24189ce.json): failed to open stream: No such file or directory /var/www/html/pagliari/lib/BE/vendor/tableeditor/web.php 1565
+[2018/10/10 15:49:37] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 15:49:42] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 15:49:43] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 15:49:44] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 15:49:45] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 15:49:46] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 15:49:47] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 15:49:49] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 15:50:06] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 15:50:12] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 15:50:12] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 15:50:16] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 15:50:16] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 15:56:12] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 15:56:13] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 15:57:25] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 15:57:27] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 15:57:31] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 16:49:44] OK test loggedin IP:192.168.1.81 url:/admin_v1/items.php?
+[2018/10/10 16:49:46] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 16:51:50] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 16:51:52] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 17:38:00] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 17:38:02] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 17:38:07] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 17:38:15] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 17:38:16] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 17:38:18] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 17:39:05] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 17:39:06] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 17:39:10] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 17:39:12] LOGIN allowed for: form:192.168.1.81
+[2018/10/10 17:40:12] LOGIN allowed for: form:192.168.1.81
+[2018/10/11 16:54:09] Undefined variable: item_id /var/www/html/pagliari/index.php 172
+[2018/10/11 16:54:20] Undefined variable: item_id /var/www/html/pagliari/index.php 172
+[2018/10/11 16:57:45] Undefined variable: item_id /var/www/html/pagliari/index.php 175
+[2018/10/11 16:57:47] Undefined variable: item_id /var/www/html/pagliari/index.php 175
+[2018/10/11 16:59:16] Undefined variable: item_id /var/www/html/pagliari/index.php 175
+[2018/10/11 17:09:13] Undefined variable: item_id /var/www/html/pagliari/index.php 175

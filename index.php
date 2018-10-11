@@ -111,14 +111,13 @@ function main(){
 			</div>
             
             <script>
-
                 function add_button(item_id){
                     var nameValue= "quantita"+item_id;   
                     console.log(nameValue);
                     var quantity = $("input[type=number][name="+nameValue+"]").val();
-
                     console.log(quantity);
                     cart_add(item_id, quantity, null);
+                   
                 }
                 
                 function remove_button(item_id){
@@ -136,9 +135,7 @@ function main(){
                 $( "#collapseAll" ).click(function() {
                   $("#treeview").hummingbird("collapseAll");
                 });
-                
-                
-                
+   
                 function print_item(msg,data){ 
                     console.log(msg);
                     console.log(data);
@@ -146,17 +143,14 @@ function main(){
                     
                     for(index=0;index<data.length;index++){
                             
-                            
                             var id= data[index].codice;            
                             var nome= data[index].nome;
                             var descrizione= data[index].descrizione;                           
                             var immagine= data[index].imgs[0];
-                            
                             var quantita= data[index].binner;
                             if(quantita==0){
                                 quantita=1;
                             }
-                            console.log(quantita);
                             
                             content="";
                             content +='<div class="col-6 col-lg-4">'
@@ -165,7 +159,7 @@ function main(){
                                         content +='<a class="img_card" href="item_detail.php"><img  class="card-img-top" src="'+immagine+'"></a>'
                                     content +='</div>'
                                     content +='<div class="card-body">'
-                                        content +='<p class="card-text">'+descrizione+'</p>'
+                                        content +='<p id="'+id+'" class="card-text"><b>'+nome+'</b><br>'+descrizione+'</p>'
                                         content +='<div class="d-flex justify-content-between align-items-center">'
                                             content +='<div class="btn-group">'
                                                 content +='<span>Quantità:&emsp; </span>'
@@ -181,10 +175,8 @@ function main(){
                             content +='</div>'
                                 
                             document.getElementById("card_item").innerHTML += content;
-                    }
-                    
+                    }  
                 }
-                
                 item_page(page=1,print_item);
             </script>
 __end__;

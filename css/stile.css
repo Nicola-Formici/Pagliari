@@ -65,6 +65,9 @@ input.quantita{
     width:50% !important;
 }
 
+p.add{
+    background-color:green;
+}
 @media (min-width: 800px){
     body{
         font-family: 'Open Sans', sans-serif;
