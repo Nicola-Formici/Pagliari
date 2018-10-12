@@ -117,12 +117,13 @@ function main(){
                     var quantity = $("input[type=number][name="+nameValue+"]").val();
                     console.log(quantity);
                     cart_add(item_id, quantity, null);
-                   
+                    $('#'+item_id).html("<p class='add'>Aggiunto al carrello</p>"); 
                 }
                 
                 function remove_button(item_id){
                     console.log(item_id);
                     cart_remove(item_id, null );
+                    $('#'+item_id).html("<p class='remove'>Rimosso dal carrello</p>"); 
                 }
                     
                 $("#treeview").hummingbird();
@@ -143,38 +144,39 @@ function main(){
                     
                     for(index=0;index<data.length;index++){
                             
-                            var id= data[index].codice;            
-                            var nome= data[index].nome;
-                            var descrizione= data[index].descrizione;                           
-                            var immagine= data[index].imgs[0];
-                            var quantita= data[index].binner;
-                            if(quantita==0){
-                                quantita=1;
-                            }
-                            
-                            content="";
-                            content +='<div class="col-6 col-lg-4">'
-                                content +='<div class="card mb-4 shadow-sm">'
-                                    content +='<div class="IE_div_card">'
-                                        content +='<a class="img_card" href="item_detail.php"><img  class="card-img-top" src="'+immagine+'"></a>'
-                                    content +='</div>'
-                                    content +='<div class="card-body">'
-                                        content +='<p id="'+id+'" class="card-text"><b>'+nome+'</b><br>'+descrizione+'</p>'
-                                        content +='<div class="d-flex justify-content-between align-items-center">'
-                                            content +='<div class="btn-group">'
-                                                content +='<span>Quantità:&emsp; </span>'
-                                                content +='<input class="quantita" type="number" name="quantita'+id+'" value="'+quantita+'" step="1" min="'+quantita+'" style="width:50%">'
-                                            content +='</div>'
-                                            content +='<div class="btn-group">'
-                                                content +='<button type="button" class="btn btn-light" onclick="add_button('+id+')"><i class="fas fa-cart-plus" ></i></button>'
-                                                content +='<button class="btn btn-danger btn-sm" onclick="remove_button('+id+')"><i class="far fa-trash-alt"></i></button>'
-                                            content +='</div>'
+                        var id= data[index].codice;            
+                        var nome= data[index].nome;
+                        var descrizione= data[index].descrizione;                           
+                        var immagine= data[index].imgs[0];
+                        var quantita= data[index].binner;
+                        if(quantita==0){
+                            quantita=1;
+                        }
+                        
+                        content="";
+                        content +='<div class="col-6 col-lg-4">'
+                            content +='<div class="card mb-4 shadow-sm">'
+                                content +='<div class="IE_div_card">'
+                                    content +='<a class="img_card" href="item_detail.php?Id='+id+'"><img  class="card-img-top" src="'+immagine+'"></a>'
+                                content +='</div>'
+                                content +='<div class="card-body">'
+                                    content +='<p id="'+id+'"></p>';
+                                    content +='<p id="'+id+'" class="card-text"><b>'+nome+'</b><br>'+descrizione+'</p>'
+                                    content +='<div class="d-flex justify-content-between align-items-center">'
+                                        content +='<div class="btn-group">'
+                                            content +='<span>Quantità:&emsp; </span>'
+                                            content +='<input class="quantita" type="number" name="quantita'+id+'" value="'+quantita+'" step="1" min="'+quantita+'" style="width:50%">'
+                                        content +='</div>'
+                                        content +='<div class="btn-group">'
+                                            content +='<button type="button" class="btn btn-light" onclick="add_button('+id+')"><i class="fas fa-cart-plus" ></i></button>'
+                                            content +='<button type="button" class="btn btn-danger btn-sm" onclick="remove_button('+id+')"><i class="far fa-trash-alt"></i></button>'
                                         content +='</div>'
                                     content +='</div>'
                                 content +='</div>'
                             content +='</div>'
-                                
-                            document.getElementById("card_item").innerHTML += content;
+                        content +='</div>'
+                            
+                        document.getElementById("card_item").innerHTML += content;
                     }  
                 }
                 item_page(page=1,print_item);

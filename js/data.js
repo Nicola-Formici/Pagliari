@@ -32,9 +32,15 @@ function registration(name,surname,email,tel,psw,address,prov,city,cap,cod_fisca
     );
 }
 
-
 function item_page(page, on_success) {
     return ajax_get('__ajax__.php?a=item_page&page='+page,
+        function(err){console.log(err)},
+        on_success
+    );
+}
+
+function item_details(id, on_success) {
+    return ajax_get('__ajax__.php?a=',
         function(err){console.log(err)},
         on_success
     );

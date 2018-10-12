@@ -68,6 +68,11 @@ input.quantita{
 p.add{
     background-color:green;
 }
+
+p.remove{
+    background-color:red;
+}
+
 @media (min-width: 800px){
     body{
         font-family: 'Open Sans', sans-serif;

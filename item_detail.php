@@ -90,45 +90,8 @@ function main(){
 							</ul>
 						</div>	
                     </div>
-                    <div class="col-12 col-lg-8">
-                        <div class="container">	
-                            <center class="title-item"> Prodotto </center>					
-                            <table class="tab-img-details">
-                                <tr>
-                                    <td colspan="3">
-                                        <a href="./immagini/carribotte-B350.jpg" class="without-caption image-link">
-                                            <img id="img_prodotto" src="./immagini/carribotte-B350.jpg"/>  
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>	
-                                    <td>
-                                        <a href="./immagini/carribotte-B350.jpg" class="without-caption image-link">
-                                            <img class="img_secondarie" src="./immagini/carribotte-B350.jpg" />  
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="./immagini/carribotte-B350.jpg" class="without-caption image-link">
-                                            <img class="img_secondarie" src="./immagini/carribotte-B350.jpg"/>  
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="./immagini/carribotte-B350.jpg" class="without-caption image-link">
-                                            <img class="img_secondarie" src="./immagini/carribotte-B350.jpg" />  
-                                        </a>
-                                    </td>
-                                </tr>
-                             </table>
-                            <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>	
-                            <p class="item-description">Prezzo: 5€</p>
-                            <div class="option-item">
-                                <div class="btn-group">
-                                    <span>Quantità:&emsp; </span><input class="quantita" type="number" id="quantita" name="quantita" value="1" step="1" min="1">
-                                </div>
-                                <button type="button" class="btn btn-light"><i class="fas fa-cart-plus"></i></button>&emsp;
-                                <button type="button" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button>	
-                            </div>
-                        </div>
+                    <div id="details">
+                        
                     </div>
                  </div>
             </div>
@@ -176,6 +139,22 @@ function main(){
                     enabled: true
                 }
             });
+            
+            /*funzione per estrarre i parametri dall'URL*/
+            (function($) {
+                $.urlParams = function(name){
+                    var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
+                    if (!results) { 
+                        return 0; 
+                    }
+                    return results[1] || 0;
+                };
+            })(jQuery);
+            
+            var id = $.urlParams('Id');
+            console.log(id);
+            
+            
         </script>	
 __end__;
 	return layout($content, $title="", "");
