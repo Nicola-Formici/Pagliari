@@ -40,7 +40,7 @@ function item_page(page, on_success) {
 }
 
 function item_details(id, on_success) {
-    return ajax_get('__ajax__.php?a=',
+    return ajax_get('__ajax__.php?action=item_detail&code='+id,
         function(err){console.log(err)},
         on_success
     );

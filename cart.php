@@ -42,15 +42,14 @@ function content(){
                             console.log(data.rows.length);
                             
                             for(index=0;index<data.rows.length;index++){
-                            
-                                var linea= data.rows[index].row_id;
-                                var id= data.rows[index].article_id;
-                                var nome= data.rows[index].name;
-                                var descrizione= data.rows[index].description;              
-                                var immagine= data.rows[index].img;
-                                var prezzo= data.rows[index].price;
-                                var quantita= data.rows[index].qta;
-                                var sub= data.rows[index].subtotal;
+                                   
+                                var id= data.rows[index].codice;
+                                var nome= data.rows[index].nome;
+                                var descrizione= data.rows[index].descrizione;              
+                                var immagine= data.rows[index].imgs[0];
+                                var prezzo= 0;
+                                var quantita= data.rows[index].binner;
+                                var sub= 0;
                            
                                 content="";
                                 content +='<tr>'

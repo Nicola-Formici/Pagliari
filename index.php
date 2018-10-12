@@ -161,7 +161,7 @@ function main(){
                                 content +='</div>'
                                 content +='<div class="card-body">'
                                     content +='<p id="'+id+'"></p>';
-                                    content +='<p id="'+id+'" class="card-text"><b>'+nome+'</b><br>'+descrizione+'</p>'
+                                    content +='<p class="card-text"><b>'+nome+'</b></p>'
                                     content +='<div class="d-flex justify-content-between align-items-center">'
                                         content +='<div class="btn-group">'
                                             content +='<span>Quantità:&emsp; </span>'

@@ -15,12 +15,12 @@ p.info{
 }
 
 img.img_secondarie{
-	width:100%;
+	width:80%;
+    margin-left:10%;
 }
 
-.tab-img-details{
-	width:80%;
-	margin-left:10%;
+.tab_img_details{
+	width:100%;
 }
 
 .title-item{
@@ -73,6 +73,19 @@ p.remove{
     background-color:red;
 }
 
+td.specifiche, tr.specifiche{
+    border: 1px solid black;
+}
+
+table.specifiche {
+    margin-top:5%;
+}
+
+td.detail{
+    background-color: #99CBFF;
+    border: 1px solid black;
+}
+
 @media (min-width: 800px){
     body{
         font-family: 'Open Sans', sans-serif;
@@ -96,7 +109,8 @@ p.remove{
 }
 
 #img_prodotto{
-	width:100%;
+	width:50%;
+    margin-left:25%;
 }
 
 #img_lavorazioni{

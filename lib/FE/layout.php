@@ -60,8 +60,8 @@ function layout($content, $title= "Al.Pa.car", $description="" ) {
 		<!--miei stili -->
 		
 		<link rel="stylesheet" type="text/css" href="css/stile.css">
-		
-		
+		<link href="./css/resCarousel.css" rel="stylesheet" type="text/css">
+		<script src="js/resCarousel.js"></script>
         
 		<meta name="google-site-verification" content="3MeieJGuelWy8CWBgfApj8LguEj8dFnrdzMrxAk9nKE" />
   </head>
