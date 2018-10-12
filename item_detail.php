@@ -235,9 +235,8 @@ function main(){
                         content +='<button type="button" class="btn btn-light" onclick="add_button('+id+')"><i class="fas fa-cart-plus" ></i></button>'
                         content +='<button type="button" class="btn btn-danger btn-sm" onclick="remove_button('+id+')"><i class="far fa-trash-alt"></i></button>'
                         
-                        
                         content +='<table class="specifiche">'
-                        content +='<tr class="specifiche"><td colspan="2" class="specifiche"><h5><center>Specifiche</center></h5></td></tr>'
+                        content +='<tr class="specifiche"><td colspan="2" class="specifiche"><h5 class="title_specifiche"><center>Specifiche</center></h5></td></tr>'
                             if( dimensione!= ""){
                                 content +='<tr class="specifiche">'
                                     content +='<td class="detail"><p>Dimensione: </p></td>'
@@ -307,11 +306,9 @@ function main(){
                         content +='</table>'
                        
                     content +='</div>'
-              
-                
+
                  document.getElementById("details").innerHTML += content;
-            }
-            
+            }       
             item_details(id,print_details);
             
         </script>	

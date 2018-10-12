@@ -146,6 +146,21 @@ function main(){
 										<p><br>Inserisci una descrizione:</p>
 										<div class="w-100"></div>
 										<textarea class="textarea-description" id="description" name="description" style="width:100%;" rows="5" cols="100"></textarea>
+                                        <div class="col-md-5 mb-3">
+                                            <label for="materiale">Materiale</label>
+                                            <select class="custom-select d-block w-100" id="country" required="">
+                                                <option>Acciaio</option>
+                                                <option>Acciaio inox</option>
+                                            </select>                                    
+                                        </div>
+                                        <div class="col-md-5 mb-3">
+                                            <label for="spessore">Spessore</label>
+                                            <select class="custom-select d-block w-100" id="country" required="">
+                                                <option>10mm</option>
+                                                <option>20mm</option>
+                                                <option>30mm</option>
+                                            </select>                                    
+                                        </div>
 										<fieldset id="upload">
 											<br><p>Inserisci file (.dwg,.dxf,.igs):</p><br>
 											<div>

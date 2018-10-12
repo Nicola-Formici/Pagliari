@@ -86,6 +86,10 @@ td.detail{
     border: 1px solid black;
 }
 
+h5.title_specifiche{
+    color:red;
+}
+
 @media (min-width: 800px){
     body{
         font-family: 'Open Sans', sans-serif;
@@ -136,3 +140,4 @@ td.detail{
 #upload{
     float:left;
 }
+
