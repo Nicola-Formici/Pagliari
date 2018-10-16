@@ -13,56 +13,11 @@ function main(){
 							<ul id="treeview" class="hummingbird-base">
 								<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Lavorazioni Meccaniche
 									<ul class="list-group">
-										<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Taglio/Foratura
-											<ul class="list-group">
-												<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Acciaio
-													<ul class="list-group">
-														<li id="figlio" class="list-group-item">&emsp;<a href="./mechanical_machining.php">Spessore 10mm</a></li>
-														<li id="figlio" class="list-group-item">&emsp;<a href="./mechanical_machining.php">Spessore 20mm</a></li>
-													</ul>
-												</li>
-												<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Acciaio Inox
-													<ul class="list-group">
-														<li id="figlio" class="list-group-item">&emsp;<a href="./mechanical_machining.php">Spessore 10mm</a></li>
-														<li id="figlio" class="list-group-item">&emsp;<a href="./mechanical_machining.php">Spessore 20mm</a></li>
-													</ul>
-												</li>
-											</ul>
-										</li>
-										<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Taglio/Piegatura
-											<ul class="list-group">
-												<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Acciaio
-													<ul class="list-group">
-														<li id="figlio" class="list-group-item">&emsp;<a href="./mechanical_machining.php">Spessore 10mm</a></li>
-														<li id="figlio" class="list-group-item">&emsp;<a href="./mechanical_machining.php">Spessore 20mm</a></li>
-													</ul>
-												</li>
-												<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Acciaio Inox
-													<ul class="list-group">
-														<li id="figlio" class="list-group-item">&emsp;<a href="./mechanical_machining.php">Spessore 10mm</a></li>
-														<li id="figlio" class="list-group-item">&emsp;<a href="./mechanical_machining.php">Spessore 20mm</a></li>
-													</ul>
-												</li>
-											</ul>
-										</li>
-										<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Taglio/Saldatura
-											<ul class="list-group">
-												<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Acciaio
-													<ul class="list-group">
-														<li id="figlio" class="list-group-item">&emsp;<a href="./mechanical_machining.php">Spessore 10mm</a></li>
-														<li id="figlio" class="list-group-item">&emsp;<a href="./mechanical_machining.php">Spessore 20mm</a></li>
-													</ul>
-												</li>
-												<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Acciaio Inox
-													<ul class="list-group">
-														<li id="figlio" class="list-group-item">&emsp;<a href="./mechanical_machining.php">Spessore 10mm</a></li>
-														<li id="figlio" class="list-group-item">&emsp;<a href="./mechanical_machining.php">Spessore 20mm</a></li>
-													</ul>
-												</li>
-											</ul>
-										</li>
+										<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Taglio/Foratura</a></li>
+										<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Taglio/Piegatura</a></li>
+										<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Taglio/Saldatura</a></li>
 									</ul>	
-								</li>			
+								</li>		
 								<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Componenti
 									<ul class="list-group">
 										<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Cuscinetti
@@ -146,20 +101,22 @@ function main(){
 										<p><br>Inserisci una descrizione:</p>
 										<div class="w-100"></div>
 										<textarea class="textarea-description" id="description" name="description" style="width:100%;" rows="5" cols="100"></textarea>
-                                        <div class="col-md-5 mb-3">
-                                            <label for="materiale">Materiale</label>
-                                            <select class="custom-select d-block w-100" id="country" required="">
-                                                <option>Acciaio</option>
-                                                <option>Acciaio inox</option>
-                                            </select>                                    
-                                        </div>
-                                        <div class="col-md-5 mb-3">
-                                            <label for="spessore">Spessore</label>
-                                            <select class="custom-select d-block w-100" id="country" required="">
-                                                <option>10mm</option>
-                                                <option>20mm</option>
-                                                <option>30mm</option>
-                                            </select>                                    
+                                        <div class="row">
+                                            <div class="col-md-5 mb-3">
+                                                <label>Materiale</label>
+                                                <select class="custom-select d-block w-100" id="materiale" name="materiale" required="">
+                                                    <option>Acciaio</option>
+                                                    <option>Acciaio inox</option>
+                                                </select>                                    
+                                            </div>
+                                            <div class="col-md-5 mb-3">
+                                                <label>Spessore</label>
+                                                <select class="custom-select d-block w-100" id="spessore" name="spessore" required="">
+                                                    <option>10mm</option>
+                                                    <option>20mm</option>
+                                                    <option>30mm</option>
+                                                </select>                                    
+                                            </div>
                                         </div>
 										<fieldset id="upload">
 											<br><p>Inserisci file (.dwg,.dxf,.igs):</p><br>
@@ -245,6 +202,8 @@ function main(){
                     $("#work-data").validate({
                         rules: {
                             description: "required",
+                            materiale: "required",
+                            spessore: "required",
                             drawing:{
                                 required: true,
                                 extension: "dwg|dxf|igs|txt"
@@ -252,6 +211,8 @@ function main(){
                         },
                         messages: {
                             description: "Inserisci una descrizione",
+                            materiale: "Scegli il materiale",
+                            spessore: "Scegli lo spessore",
                             drawing:{
                                 required: "Scegli il file da inserire",
                                 extension: "Estensione non supportata"

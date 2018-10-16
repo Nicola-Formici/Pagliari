@@ -12,56 +12,11 @@ function main(){
 							<ul id="treeview" class="hummingbird-base">
 								<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Lavorazioni Meccaniche
 									<ul class="list-group">
-										<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Taglio/Foratura
-											<ul class="list-group">
-												<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Acciaio
-													<ul class="list-group">
-														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 10mm </a></li>
-														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 20mm</a></li>
-													</ul>
-												</li>
-												<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Acciaio Inox
-													<ul class="list-group">
-														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 10mm </a></li>
-														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 20mm</a></li>
-													</ul>
-												</li>
-											</ul>
-										</li>
-										<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Taglio/Piegatura
-											<ul class="list-group">
-												<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Acciaio
-													<ul class="list-group">
-														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 10mm </a></li>
-														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 20mm</a></li>
-													</ul>
-												</li>
-												<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Acciaio Inox
-													<ul class="list-group">
-														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 10mm </a></li>
-														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 20mm</a></li>
-													</ul>
-												</li>
-											</ul>
-										</li>
-										<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Taglio/Saldatura
-											<ul class="list-group">
-												<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Acciaio
-													<ul class="list-group">
-														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 10mm </a></li>
-														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 20mm</a></li>
-													</ul>
-												</li>
-												<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Acciaio Inox
-													<ul class="list-group">
-														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 10mm </a></li>
-														<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Spessore 20mm</a></li>
-													</ul>
-												</li>
-											</ul>
-										</li>
+										<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Taglio/Foratura</a></li>
+										<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Taglio/Piegatura</a></li>
+										<li id="figlio" class="list-group-item"> &emsp;<a href="./mechanical_machining.php">Taglio/Saldatura</a></li>
 									</ul>	
-								</li>			
+								</li>				
 								<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Componenti
 									<ul class="list-group">
 										<li class="list-group-item"> <i class="fa fa-plus"></i>&emsp;Cuscinetti
