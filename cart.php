@@ -59,11 +59,12 @@ function content(){
                                                 content +='<td data-th="Price">'+prezzo+'€</td>'
                                                 content +='<td data-th="Quantity">'
                                                     content +='<div>'
-                                                        content +='<input  type="number" name="quantita'+id+'" value="'+quantita+'" step="1" min="1" onchange="add('+id+')" style="width:100%;">'
+                                                        content +='<input  type="number" name="quantita'+id+'" value="'+quantita+'" step="1" min="1" style="width:100%;">'
                                                     content +='</div>'
                                                 content +='</td>'
                                                 content +='<td data-th="Subtotal" class="text-center">'+sub+'€</td>'
                                                 content +='<td class="actions" data-th="">'
+                                                    content +='<button class="btn btn btn-sm" onclick="add('+id+')"><i class="fas fa-sync-alt"></i></button>&emsp;'
                                                     content +='<button class="btn btn-danger btn-sm" onclick="remuve('+id+')"><i class="far fa-trash-alt"></i></button>'
                                                 content +='</td>'
                                             content +='</tr>' 
@@ -84,7 +85,6 @@ function content(){
 
                         function remuve(item_id){
                             cart_remove(item_id, null );
-                            window.location.reload();
                         }
                         
                         function add(item_id){
@@ -93,8 +93,7 @@ function content(){
                             var quantity = $("input[type=number][name="+nameValue+"]").val();
 
                             console.log(quantity);
-                            cart_add(item_id, quantity, null);
-                            window.location.reload();
+                            cart_add(item_id, quantity, null);                    
                         }
                     </script>
 __END__;

@@ -160,7 +160,13 @@ function main(){
                         content +='<center class="title-item">'+nome+'</center>'
                         content +='<table class="tab_img_details">'
                             content +='<tr>'
-                                content +='<td colspan="'+imgSize+'">'
+                                if(otherImg.length<=imgSize){
+                                    content +='<td colspan="'+imgSize+'">'
+                                }
+                                else{
+                                    content +='<td colspan="'+otherImg.length+'">'
+                                    
+                                }
                                     content +=' <a href="'+immagine+'" class="without-caption image-link">';
                                         content +='<img id="img_prodotto" src="'+immagine+'"/>  '
                                     content +='</a>'
@@ -171,7 +177,7 @@ function main(){
                             for(; i<otherImg.length;i++){
                                 content +='<td style="width:20%">'
                                     content +='<a href="'+otherImg[i]+'" class="without-caption image-link">'
-                                        content +='<img class="img_secondarie" src="'+otherImg[i]+'" />'
+                                        content +='<img class="img_secondarie" src="'+otherImg[i]+'"/>'
                                     content +='</a>'
                                 content +='</td>'
                             }

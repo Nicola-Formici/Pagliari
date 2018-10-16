@@ -104,14 +104,14 @@ function main(){
                                         <div class="row">
                                             <div class="col-md-5 mb-3">
                                                 <label>Materiale</label>
-                                                <select class="custom-select d-block w-100" id="materiale" name="materiale" required="">
+                                                <select class="custom-select d-block w-100" id="materiale" name="materiale" required>
                                                     <option>Acciaio</option>
                                                     <option>Acciaio inox</option>
                                                 </select>                                    
                                             </div>
                                             <div class="col-md-5 mb-3">
                                                 <label>Spessore</label>
-                                                <select class="custom-select d-block w-100" id="spessore" name="spessore" required="">
+                                                <select class="custom-select d-block w-100" id="spessore" name="spessore" required>
                                                     <option>10mm</option>
                                                     <option>20mm</option>
                                                     <option>30mm</option>

@@ -66,11 +66,11 @@ input.quantita{
 }
 
 p.add{
-    background-color:green;
+    background:rgba(0, 256, 0,0.7);
 }
 
 p.remove{
-    background-color:red;
+    background:rgba(256, 0, 0,0.7);
 }
 
 td.specifiche, tr.specifiche{

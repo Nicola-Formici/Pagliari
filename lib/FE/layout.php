@@ -22,10 +22,7 @@ function layout($content, $title= "Al.Pa.car", $description="" ) {
         
         </script>
 		
-        <!--link popup-->
-		
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">	
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+
 		
 		<!--script generali-->
 		
@@ -53,14 +50,21 @@ function layout($content, $title= "Al.Pa.car", $description="" ) {
 		<!-- link font -->
 		
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-
-		<script src="./js/json.js"></script>
+       
+       
+		
+        <script src="./js/json.js"></script>
 		<script src="./js/data.js"></script>
 		
-		<!--miei stili -->
+        
+		
+        <!--miei stili -->
 		
 		<link rel="stylesheet" type="text/css" href="css/stile.css">
+		<!--link popup-->
 		
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">	
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
         
 		<meta name="google-site-verification" content="3MeieJGuelWy8CWBgfApj8LguEj8dFnrdzMrxAk9nKE" />
   </head>

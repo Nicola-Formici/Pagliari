@@ -47,36 +47,44 @@ function main(){
 						</div>
 						<div class="col-12 col-lg-8">
 							<div class="container">						
-								<div id="card_item"class="row">
+								<div id="card_item" class="row">
 								</div>
 							</div>
 						</div>	
 				</div>
-				<nav aria-label="Page navigation">
-					<ul class="pagination justify-content-center">
-						<li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">Precedente</a></li>
-						<li class="page-item"><a class="page-link" href="#">1</a></li>
-						<li class="page-item"><a class="page-link" href="#">2</a></li>
-						<li class="page-item"><a class="page-link" href="#">3</a></li>
-						<li class="page-item"><a class="page-link" href="#">Successiva</a></li>
-					</ul>
-				</nav>
+                <nav id="pages" aria-label="Page navigation">
+                    
+                </nav>
 			</div>
             
             <script>
+                function page(){
+                    var numPage=10;
+                    var content = ''
+                            content += '<ul  class="pagination justify-content-center">'
+                                content +='<li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">Precedente</a></li>';
+                                    for(var i=1;i<=numPage;i++){
+                                        content +='<li class="page-item"><a class="page-link" href="#">'+i+'</a></li>'
+                                    }
+                                content +='<li class="page-item"><a class="page-link" href="#">Successiva</a></li>'
+                            content +='</ul>'
+                    document.getElementById("pages").innerHTML += content;
+                }
+                page();
+                
                 function add_button(item_id){
                     var nameValue= "quantita"+item_id;   
                     console.log(nameValue);
                     var quantity = $("input[type=number][name="+nameValue+"]").val();
                     console.log(quantity);
                     cart_add(item_id, quantity, null);
-                    $('#'+item_id).html("<p class='add'>Aggiunto al carrello</p>"); 
+                    $('#'+item_id).html("<p class='add'>&emsp;Aggiunto al carrello</p>"); 
                 }
                 
                 function remove_button(item_id){
                     console.log(item_id);
                     cart_remove(item_id, null );
-                    $('#'+item_id).html("<p class='remove'>Rimosso dal carrello</p>"); 
+                    $('#'+item_id).html("<p class='remove'>&emsp;Rimosso dal carrello</p>"); 
                 }
                     
                 $("#treeview").hummingbird();
