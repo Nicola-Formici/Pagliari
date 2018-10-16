@@ -41,7 +41,7 @@ function content(){
                                            
                                         var id= data.rows[index].codice;
                                         var nome= data.rows[index].nome;
-                                        var descrizione= data.rows[index].descrizione;              
+                                                     
                                         var immagine= data.rows[index].imgs[0];
                                         var prezzo= 0;
                                         var quantita= data.rows[index].binner;
@@ -54,7 +54,7 @@ function content(){
                                                 content +='</td>'
                                                 content +='<td colspan="2">'
                                                     content +='<h4 class="nomargin">'+nome+'</h4>'
-                                                    content +='<p>'+descrizione+'</p>'
+                                                    
                                                 content +='</td>'
                                                 content +='<td data-th="Price">'+prezzo+'€</td>'
                                                 content +='<td data-th="Quantity">'
@@ -74,7 +74,7 @@ function content(){
                                         content +='<tr>'    
                                             content +='<td style="padding-top:3%;"><a href="./index.php" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continua ad acquistare</a></td>'
                                             content +='<td colspan="4" class="hidden-xs"></td>'
-                                            content +='<td class="hidden-x text-center" style="padding-top:3%;"><strong>Total:'+data.total+'</strong></td>'
+                                            content +='<td class="hidden-x text-center" style="padding-top:3%;"><strong>Total:'+data.total+'€</strong></td>'
                                             content +='<td style="padding-top:3%;"><a href="checkout.php" class="btn btn-success btn-block">Procedi al pagamento <i class="fa fa-angle-right"></i></a></td>'
                                         content +='</tr>'
                                     content +='</tfoot>'
@@ -84,7 +84,9 @@ function content(){
                         }
 
                         function remuve(item_id){
-                            cart_remove(item_id, null );
+                            console.log(item_id);
+                            cart_remove(item_id, null);
+                            location.reload();
                         }
                         
                         function add(item_id){

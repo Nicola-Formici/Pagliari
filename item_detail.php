@@ -64,7 +64,9 @@ function main(){
             $( "#collapseAll" ).click(function() {
               $("#treeview").hummingbird("collapseAll");
             });
-        
+            
+            //popup
+            
             $('.without-caption').magnificPopup({
                 type: 'image',
                 closeOnContentClick: true,
@@ -121,8 +123,7 @@ function main(){
                         true_description += car;
                     }
                 }
-                return true_description;
-                
+                return true_description;  
             }
             
             /*funzione jQuary per estrarre i parametri dall'URL*/
@@ -210,7 +211,7 @@ function main(){
                         content +='<div class="btn-group">'
                             content +='<span>Quantità:&emsp; </span><input class="quantita" type="number" name="quantita'+id+'" value="'+quantita+'" step="1" min="'+quantita+'" style="width:50%">'
                         content +='</div>'
-                        content +='<button type="button" class="btn btn-light" onclick="add_button('+id+')"><i class="fas fa-cart-plus" ></i></button>'
+                        content +='<button type="button" class="btn btn-light" onclick="add_button('+id+')"><i class="fas fa-cart-plus"></i></button>'
                         content +='<button type="button" class="btn btn-danger btn-sm" onclick="remove_button('+id+')"><i class="far fa-trash-alt"></i></button>'
                         
                         content +='<table class="specifiche">'

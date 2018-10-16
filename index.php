@@ -62,7 +62,7 @@ function main(){
                     var numPage=10;
                     var content = ''
                             content += '<ul  class="pagination justify-content-center">'
-                                content +='<li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">Precedente</a></li>';
+                                content +='<li class="page-item"><a class="page-link" href="#" tabindex="-1">Precedente</a></li>';
                                     for(var i=1;i<=numPage;i++){
                                         content +='<li class="page-item"><a class="page-link" href="#">'+i+'</a></li>'
                                     }
