@@ -12,8 +12,7 @@ function content(){
                         </table>
                     </div>
                    
-                   <script>
-                        
+                   <script>                    
                         cart_page(page=1, print_cart);
                                                
                         function print_cart(msg,data){ 
@@ -40,21 +39,18 @@ function content(){
                                     for(index=0;index<data.rows.length;index++){
                                            
                                         var id= data.rows[index].codice;
-                                        var nome= data.rows[index].nome;
-                                                     
+                                        var nome= data.rows[index].nome;            
                                         var immagine= data.rows[index].imgs[0];
                                         var prezzo= 0;
                                         var quantita= data.rows[index].binner;
                                         var sub= 0;
-                                   
                                         
                                             content +='<tr>'
                                                 content +='<td  data-th="Product">'
                                                     content +='<a class="img_card" href="item_detail.php?Id='+id+'"><img  class="img-responsive" src="'+immagine+'"></a>'
                                                 content +='</td>'
                                                 content +='<td colspan="2">'
-                                                    content +='<h4 class="nomargin">'+nome+'</h4>'
-                                                    
+                                                    content +='<h4 class="nomargin">'+nome+'</h4>'  
                                                 content +='</td>'
                                                 content +='<td data-th="Price">'+prezzo+'€</td>'
                                                 content +='<td data-th="Quantity">'
@@ -88,7 +84,7 @@ function content(){
                             cart_remove(item_id, null);
                             location.reload();
                         }
-                        
+
                         function add(item_id){
                             var nameValue= "quantita"+item_id;   
                             console.log(nameValue);

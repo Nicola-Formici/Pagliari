@@ -283,17 +283,14 @@ function main(){
                                 content +='</tr>'
                             }
                         content +='</table>'
-                       
                     content +='</div>'
 
                  document.getElementById("details").innerHTML += content;
             }       
-            item_details(id,print_details);
-            
+            item_details(id,print_details);          
         </script>	
 __end__;
 	return layout($content, $title="", "");
-}
-		
+}		
 echo main();
 ?>
