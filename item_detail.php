@@ -110,6 +110,21 @@ function main(){
                 
             }
             
+            function modify_description(descrizione){
+                var true_description='';
+                for(var i=0; i< descrizione.length; i++){
+                    var car = descrizione.charAt(i);
+                    if(car=='\u000A'){                 /* \u000A= '\n' */
+                        true_description += '<br>';
+                    }
+                    else{
+                        true_description += car;
+                    }
+                }
+                return true_description;
+                
+            }
+            
             /*funzione jQuary per estrarre i parametri dall'URL*/
             (function($) {
                 $.urlParams = function(name){
@@ -153,6 +168,8 @@ function main(){
                 var volume_imb=data.volume_imb;             
                 var peso_imb=data.peso_imb;
                 
+                //modifica sintattica della descrizione
+                var descrizione_html= modify_description(descrizione);
                 
                 var imgSize=5;
                 content="";
@@ -189,7 +206,7 @@ function main(){
                             }
                             content +='<tr>'
                         content +='</table>'
-                        content +='<p class="item-description"><h4>Descrizione</h4> '+descrizione+'</p>'
+                        content +='<p class="item-description"><h4>Descrizione</h4> '+descrizione_html+'</p>'
                         content +='<div class="btn-group">'
                             content +='<span>Quantità:&emsp; </span><input class="quantita" type="number" name="quantita'+id+'" value="'+quantita+'" step="1" min="'+quantita+'" style="width:50%">'
                         content +='</div>'
