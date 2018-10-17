@@ -60,8 +60,8 @@ function content(){
                                                 content +='</td>'
                                                 content +='<td data-th="Subtotal" class="text-center">'+sub+'€</td>'
                                                 content +='<td class="actions" data-th="">'
-                                                    content +='<button class="btn btn btn-sm" onclick="add('+id+')"><i class="far fa-edit"></i></button>&emsp;'
-                                                    content +='<button class="btn btn-danger btn-sm" onclick="remuve('+id+')"><i class="far fa-trash-alt"></i></button>'
+                                                    content +='<button class="btn btn btn-sm" onclick="add(&quot;'+id+'&quot;)"><i class="far fa-edit"></i></button>&emsp;'
+                                                    content +='<button class="btn btn-danger btn-sm" onclick="remuve(&quot;'+id+'&quot;)"><i class="far fa-trash-alt"></i></button>'
                                                 content +='</td>'
                                             content +='</tr>' 
                                     }

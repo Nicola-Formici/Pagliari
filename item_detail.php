@@ -214,8 +214,8 @@ function main(){
                         content +='<div class="btn-group">'
                             content +='<span>Quantità:&emsp; </span><input class="quantita" type="number" name="quantita'+id+'" value="'+quantita+'" step="1" min="'+quantita+'" style="width:50%">'
                         content +='</div>'
-                        content +='<button type="button" class="btn btn-light" onclick="add_button('+id+')"><i class="fas fa-cart-plus"></i></button>'
-                        content +='<button type="button" class="btn btn-danger btn-sm" onclick="remove_button('+id+')"><i class="far fa-trash-alt"></i></button>'
+                        content +='<button type="button" class="btn btn-light" onclick="add_button(&quot;'+id+'&quot;)"><i class="fas fa-cart-plus"></i></button>'
+                        content +='<button type="button" class="btn btn-danger btn-sm" onclick="remove_button(&quot;'+id+'&quot;)"><i class="far fa-trash-alt"></i></button>'
                         
                         content +='<table class="specifiche">'
                             content +='<tr class="specifiche"><td colspan="2" class="specifiche"><h5 class="title_specifiche"><center>Specifiche</center></h5></td></tr>'

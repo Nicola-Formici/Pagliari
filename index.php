@@ -74,9 +74,9 @@ function main(){
                 }
                 page();
                 
-                function add_button(item_id){   
-                    var nameValue= 'quantita';
-                    nameValue += item_id;
+                function add_button(item_id){  
+                    console.log(item_id);
+                    var nameValue= 'quantita'+item_id;
                     console.log(nameValue);
                     var quantity = $("input[type=number][name="+nameValue+"]").val();
                     console.log(quantity);
@@ -115,8 +115,8 @@ function main(){
                         var quantita= data[index].binner;
                         if(quantita==0){
                             quantita=1;
-                        }
-      
+                        }      
+                        
                         content +='<div class="col-6 col-lg-4">'
                             content +='<div class="card mb-4 shadow-sm">'
                                 content +='<div class="IE_div_card">'
@@ -131,8 +131,8 @@ function main(){
                                             content +='<input class="quantita" type="number" name="quantita'+id+'" value="'+quantita+'" step="1" min="'+quantita+'" style="width:50%">'
                                         content +='</div>'
                                         content +='<div class="btn-group">'
-                                            content +='<button type="button" class="btn btn-light" onclick="add_button('+id+')"><i class="fas fa-cart-plus" ></i></button>'
-                                            content +='<button type="button" class="btn btn-danger btn-sm" onclick="remove_button('+id+')"><i class="far fa-trash-alt"></i></button>'
+                                            content +='<button type="button" class="btn btn-light" onclick="add_button(&quot;'+id+'&quot;)"><i class="fas fa-cart-plus" ></i></button>'
+                                            content +='<button type="button" class="btn btn-danger btn-sm" onclick="remove_button(&quot;'+id+'&quot;)"><i class="far fa-trash-alt"></i></button>'
                                         content +='</div>'
                                     content +='</div>'
                                 content +='</div>'
