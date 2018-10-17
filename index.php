@@ -48,6 +48,7 @@ function main(){
 						<div class="col-12 col-lg-8">
 							<div class="container">						
 								<div id="card_item" class="row">
+                                    
 								</div>
 							</div>
 						</div>	
@@ -57,14 +58,15 @@ function main(){
                 </nav>
 			</div>
             
-            <script>
+            <script>                
                 function page(){
+                    item_page(page=1,print_item);
                     var numPage=10;
                     var content = ''
                             content += '<ul  class="pagination justify-content-center">'
                                 content +='<li class="page-item"><a class="page-link" href="#" tabindex="-1">Precedente</a></li>';
                                     for(var i=1;i<=numPage;i++){
-                                        content +='<li class="page-item"><a class="page-link" href="#">'+i+'</a></li>'
+                                        content +='<li class="page-item"><a class="page-link" href="#" onclick="item_page('+i+',print_item);">'+i+'</a></li>'
                                     }
                                 content +='<li class="page-item"><a class="page-link" href="#">Successiva</a></li>'
                             content +='</ul>'
@@ -72,8 +74,9 @@ function main(){
                 }
                 page();
                 
-                function add_button(item_id){
-                    var nameValue= "quantita"+item_id;   
+                function add_button(item_id){   
+                    var nameValue= 'quantita';
+                    nameValue += item_id;
                     console.log(nameValue);
                     var quantity = $("input[type=number][name="+nameValue+"]").val();
                     console.log(quantity);
@@ -102,7 +105,7 @@ function main(){
                     console.log(msg);
                     console.log(data);
                     console.log(data.length);
-                    
+                    content="";
                     for(index=0;index<data.length;index++){
                             
                         var id= data[index].codice;            
@@ -113,8 +116,7 @@ function main(){
                         if(quantita==0){
                             quantita=1;
                         }
-                        
-                        content="";
+      
                         content +='<div class="col-6 col-lg-4">'
                             content +='<div class="card mb-4 shadow-sm">'
                                 content +='<div class="IE_div_card">'
@@ -135,12 +137,10 @@ function main(){
                                     content +='</div>'
                                 content +='</div>'
                             content +='</div>'
-                        content +='</div>'
-                            
-                        document.getElementById("card_item").innerHTML += content;
+                        content +='</div>'                                                    
                     }  
-                }
-                item_page(page=1,print_item);
+                    document.getElementById("card_item").innerHTML = content;
+                }               
             </script>
 __end__;
 	return layout($content, $title="", "Vendita mezzi agricoli e lavorazioni di carpenteria meccanica.");

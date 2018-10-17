@@ -5,7 +5,6 @@ require_once './lib/lib.php';
 function main(){
 	// wrapping con contentuto rimanente
 	$content = <<<__end__
- 	
 			<div class="album py-5">
 				<div class="row">
 					<div class="col-12 col-lg-4">						
@@ -224,5 +223,4 @@ function main(){
 __end__;
 	return layout($content, $title="", "Lavorazioni di carpenteria meccanica (foratura, piegatura, saldatura).");
 }
-			
 echo main();

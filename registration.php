@@ -4,92 +4,91 @@ include_once './lib/lib.php';
 function main(){	
 	// wrapping con contentuto rimanente
 	$content = <<<__end__
-	
-	<div class="container" id="div_registration">
+        <div class="container" id="div_registration">
 			<div class="row">
 				<div class="col-12 col-lg-04 ">
 					<h2> Registrazione </h2>
 					<hr class="mb-4">
 					<form  class="needs-validation" id="registration" method="get" action=""> 
-								<div class="row">
-									<div class="col-md-6 mb-3">
-										<label for="firstname">Nome</label>
-										<input class="form-control" id="firstname" name="firstname" type="text">
-									</div>
-									<div class="col-md-6 mb-3">
-										<label for="lastname">Cognome</label>
-										<input class="form-control" id="lastname" name="lastname" type="text">
-									</div>
-								</div>
-								<div class="mb-3">
-									<label for="username">Indirizzo Email</label>
-									<div class="input-group">
-										<div class="input-group-prepend">
-										  <span class="input-group-text">@</span>
-										</div>
-										<input class="form-control" id="email" name="email" type="email">
-									</div>
-								</div>
-								<div class="mb-3">
-									<label for="username">Telefono</label>
-									<div class="input-group">
-										<input class="form-control" id="telephone" name="telephone" type="text">
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-6 mb-3">
-										<label for="password">Password</label>
-										<input class="form-control" id="password" name="password" type="password">
-									</div>
-									<div class="col-md-6 mb-3">
-										<label for="confirm_password">Conferma password</label>
-										<input class="form-control" id="confirm_password" name="confirm_password" type="password">
-									</div>
-								</div>
-								<div class="mb-3">
-									<label for="indirizzo">Indirizzo</label>
-									<input class="form-control" id="indirizzo" name="indirizzo" type="text">
-								</div>
-								<div class="row">
-									<div class="col-md-4 mb-3">
-										<label for="state">Provincia:&emsp;</label>
-										<input class="form-control" type="text" id="provincia" name="provincia" placeholder="" required>
-									</div>
-									<div class="col-md-5 mb-3">
-										<label for="country">Citta:&emsp;</label>
-										<input class="form-control" type="text" id="citta" name="citta" placeholder="" required>
-									</div>
-									<div class="col-md-3 mb-3">
-										<label for="cap">CAP</label>
-										<input class="form-control" type="text" id="cap" name="cap" placeholder="" required>
-									</div>
-								</div>
-								
-								<div class="col-md-6 mb-3">
-									<div class="custom-control custom-radio">
-										<input id="choose-piva" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="" onclick="ability_disability()" >
-										<label class="custom-control-label" for="choose-piva">Inserisci p.iva</label>
-									</div>
-									<div class="custom-control custom-radio">
-										<input id="choose-cod-fiscale" name="paymentMethod" type="radio" class="custom-control-input" required="" onclick="ability_disability()">
-										<label class="custom-control-label" for="choose-cod-fiscale">Inserisci codice fiscale</label>
-									</div>
-								</div>
-								<div class="row">	
-									<div class="col-md-6 mb-3">
-										<label for="username">P.IVA</label>
-										<div class="input-group">
-											<input class="form-control" type="text"  id="piva" name="piva" placeholder="" required>
-										</div>
-									</div>
-									<div class="col-md-6 mb-3">
-										<label for="username">Codice fiscale </label>
-										<div class="input-group">
-											<input class="form-control" type="text"  id="cod_fiscale" name="cod_fiscale" placeholder="" required disabled>
-										</div>
-									</div>
-								</div>
-								<input id="button_registration" class="btn btn-primary btn-lg btn-block" type="submit" value="Iscriviti" onclick="data_registration()">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstname">Nome</label>
+                                <input class="form-control" id="firstname" name="firstname" type="text">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastname">Cognome</label>
+                                <input class="form-control" id="lastname" name="lastname" type="text">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="username">Indirizzo Email</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">@</span>
+                                </div>
+                                <input class="form-control" id="email" name="email" type="email">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="username">Telefono</label>
+                            <div class="input-group">
+                                <input class="form-control" id="telephone" name="telephone" type="text">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="password">Password</label>
+                                <input class="form-control" id="password" name="password" type="password">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="confirm_password">Conferma password</label>
+                                <input class="form-control" id="confirm_password" name="confirm_password" type="password">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="indirizzo">Indirizzo</label>
+                            <input class="form-control" id="indirizzo" name="indirizzo" type="text">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label for="state">Provincia:&emsp;</label>
+                                <input class="form-control" type="text" id="provincia" name="provincia" placeholder="" required>
+                            </div>
+                            <div class="col-md-5 mb-3">
+                                <label for="country">Citta:&emsp;</label>
+                                <input class="form-control" type="text" id="citta" name="citta" placeholder="" required>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="cap">CAP</label>
+                                <input class="form-control" type="text" id="cap" name="cap" placeholder="" required>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <div class="custom-control custom-radio">
+                                <input id="choose-piva" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="" onclick="ability_disability()" >
+                                <label class="custom-control-label" for="choose-piva">Inserisci p.iva</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input id="choose-cod-fiscale" name="paymentMethod" type="radio" class="custom-control-input" required="" onclick="ability_disability()">
+                                <label class="custom-control-label" for="choose-cod-fiscale">Inserisci codice fiscale</label>
+                            </div>
+                        </div>
+                        <div class="row">	
+                            <div class="col-md-6 mb-3">
+                                <label for="username">P.IVA</label>
+                                <div class="input-group">
+                                    <input class="form-control" type="text"  id="piva" name="piva" placeholder="" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="username">Codice fiscale </label>
+                                <div class="input-group">
+                                    <input class="form-control" type="text"  id="cod_fiscale" name="cod_fiscale" placeholder="" required disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <input id="button_registration" class="btn btn-primary btn-lg btn-block" type="submit" value="Iscriviti" onclick="data_registration()">
 					</form>
 				</div>
 			</div>

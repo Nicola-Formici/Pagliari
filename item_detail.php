@@ -67,19 +67,22 @@ function main(){
             
             //popup
             
-            $('.without-caption').magnificPopup({
-                type: 'image',
-                closeOnContentClick: true,
-                closeBtnInside: false,
-                mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
-                image: {
-                    verticalFit: true
-                },
-                zoom: {
-                    enabled: true,
-                    duration: 300 // don't foget to change the duration also in CSS
-                }
-            });
+            function popup(){
+                $('.without-caption').magnificPopup({
+                    type: 'image',
+                    closeOnContentClick: true,
+                    closeBtnInside: false,
+                    mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+                    image: {
+                        verticalFit: true
+                    },
+                    zoom: {
+                        enabled: true,
+                        duration: 300 // don't foget to change the duration also in CSS
+                    }
+                });
+            }
+            popup();
 
             $('.with-caption').magnificPopup({
                 type: 'image',
@@ -215,7 +218,7 @@ function main(){
                         content +='<button type="button" class="btn btn-danger btn-sm" onclick="remove_button('+id+')"><i class="far fa-trash-alt"></i></button>'
                         
                         content +='<table class="specifiche">'
-                        content +='<tr class="specifiche"><td colspan="2" class="specifiche"><h5 class="title_specifiche"><center>Specifiche</center></h5></td></tr>'
+                            content +='<tr class="specifiche"><td colspan="2" class="specifiche"><h5 class="title_specifiche"><center>Specifiche</center></h5></td></tr>'
                             if( dimensione!= ""){
                                 content +='<tr class="specifiche">'
                                     content +='<td class="detail"><p>Dimensione: </p></td>'
@@ -286,6 +289,7 @@ function main(){
                     content +='</div>'
 
                  document.getElementById("details").innerHTML += content;
+                 popup();
             }       
             item_details(id,print_details);          
         </script>	
