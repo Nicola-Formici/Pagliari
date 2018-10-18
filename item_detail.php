@@ -210,6 +210,7 @@ function main(){
                             }
                             content +='<tr>'
                         content +='</table>'
+                        
                         content +='<p class="item-description"><h4>Descrizione</h4> '+descrizione_html+'</p>'
                         content +='<div class="btn-group">'
                             content +='<span>Quantità:&emsp; </span><input class="quantita" type="number" name="quantita'+id+'" value="'+quantita+'" step="1" min="'+quantita+'" style="width:50%">'
