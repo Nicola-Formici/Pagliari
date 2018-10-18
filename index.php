@@ -58,21 +58,45 @@ function main(){
                 </nav>
 			</div>
             
-            <script>                
-                function page(){
-                    item_page(page=1,print_item);
-                    var numPage=10;
+            <script>  
+                var page_now=1
+                var numPage=10;
+                
+                function page(){                  
+                    item_page(page_now,print_item);
                     var content = ''
                             content += '<ul  class="pagination justify-content-center">'
-                                content +='<li class="page-item"><a class="page-link" href="#" tabindex="-1">Precedente</a></li>';
+                                content +='<li class="page-item"><a class="page-link" href="#" tabindex="-1" onclick="load_item_page_prec()">Precedente</a></li>';
                                     for(var i=1;i<=numPage;i++){
-                                        content +='<li class="page-item"><a class="page-link" href="#" onclick="item_page('+i+',print_item);">'+i+'</a></li>'
+                                        content +='<li class="page-item"><a class="page-link" href="#" onclick="load_item_page('+i+')">'+i+'</a></li>'
                                     }
-                                content +='<li class="page-item"><a class="page-link" href="#">Successiva</a></li>'
+                                content +='<li class="page-item"><a class="page-link" href="#" onclick="load_item_page_succ()">Successiva</a></li>'
                             content +='</ul>'
                     document.getElementById("pages").innerHTML += content;
                 }
                 page();
+                
+                function load_item_page(page){
+                    page_now=page;
+                    console.log('pagina '+page_now);
+                    item_page(page,print_item);
+                }
+                
+                function load_item_page_prec(){
+                    if(page_now != 1){
+                        page_now=page_now-1;
+                        console.log('pagina '+page_now);
+                        item_page(page_now,print_item);
+                    }
+                }
+                
+                function load_item_page_succ(){
+                    if(page_now != numPage){
+                        page_now=page_now+1;
+                        console.log('pagina '+page_now);
+                        item_page(page_now,print_item);
+                    }
+                }
                 
                 function add_button(item_id){  
                     console.log(item_id);

@@ -73,6 +73,10 @@ p.remove{
     background:rgba(256, 0, 0,0.7);
 }
 
+p.notifica{
+    width:40%;
+}
+
 td.specifiche, tr.specifiche{
     border: 1px solid black;
 }

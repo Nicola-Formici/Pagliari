@@ -106,13 +106,13 @@ function main(){
                 var quantity = $("input[type=number][name="+nameValue+"]").val();
                 console.log(quantity);
                 cart_add(item_id, quantity, null);
-                
+                $('#'+item_id).html("<p class='add'>&emsp;Aggiunto al carrello</p>"); 
             }
             
             function remove_button(item_id){
                 console.log(item_id);
                 cart_remove(item_id, null );
-                
+                $('#'+item_id).html("<p class='remove'>&emsp;Rimosso dal carrello</p>");
             }
             
             function modify_description(descrizione){
@@ -216,6 +216,7 @@ function main(){
                         content +='</div>'
                         content +='<button type="button" class="btn btn-light" onclick="add_button(&quot;'+id+'&quot;)"><i class="fas fa-cart-plus"></i></button>'
                         content +='<button type="button" class="btn btn-danger btn-sm" onclick="remove_button(&quot;'+id+'&quot;)"><i class="far fa-trash-alt"></i></button>'
+                        content +='<p class="notifica" id="'+id+'"></p>';
                         
                         content +='<table class="specifiche">'
                             content +='<tr class="specifiche"><td colspan="2" class="specifiche"><h5 class="title_specifiche"><center>Specifiche</center></h5></td></tr>'
