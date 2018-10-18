@@ -110,56 +110,11 @@ __end__;
                     <li><span></span></li>
                     <li><span>Lavorazioni Meccaniche</span>
                         <ul>
-                            <li><span>Taglio/Foratura</span>
-                                <ul>
-                                    <li><span>Acciaio</span>
-                                        <ul>
-                                            <li><a href="../mechanical_machining.php"><span>Spessore 10mm</span></a></li>
-                                            <li><a href="../mechanical_machining.php"><span>Spessore 20mm</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li><span>Acciaio Inox</span>
-                                        <ul>
-                                            <li><a href="../mechanical_machining.php"><span>Spessore 10mm</span></a></li>
-                                            <li><a href="../mechanical_machining.php"><span>Spessore 20mm</span></a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><span>Taglio/Piegatura</span>
-                                <ul>
-                                    <li><span>Acciaio</span>
-                                        <ul>
-                                            <li><a href="../mechanical_machining.php"><span>Spessore 10mm</span></a></li>
-                                            <li><a href="../mechanical_machining.php"><span>Spessore 20mm</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li><span>Acciaio Inox</span>
-                                        <ul>
-                                            <li><a href="../mechanical_machining.php"><span>Spessore 10mm</span></a></li>
-                                            <li><a href="../mechanical_machining.php"><span>Spessore 20mm</span></a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><span>Taglio/Saldatura</span>
-                                <ul>
-                                    <li><span>Acciaio</span>
-                                        <ul>
-                                            <li><a href="../mechanical_machining.php"><span>Spessore 10mm</span></a></li>
-                                            <li><a href="../mechanical_machining.php"><span>Spessore 20mm</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li><span>Acciaio Inox</span>
-                                        <ul>
-                                            <li><a href="../mechanical_machining.php"><span>Spessore 10mm</span></a></li>
-                                            <li><a href="../mechanical_machining.php"><span>Spessore 20mm</span></a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>	
-                    </li>			
+                            <li><span><a href="../mechanical_machining.php">Taglio/Foratura </a></span></li>
+                            <li><span><a href="../mechanical_machining.php">Taglio/Piegatura</a></span></li>
+                            <li><span><a href="../mechanical_machining.php">Taglio/Saldatura</a></span></li>
+                        </ul>
+                    </li>
                     <li><span>Componenti</span>
                         <ul>
                             <li><span>Cuscinetti</span>
