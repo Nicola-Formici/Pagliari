@@ -128,15 +128,15 @@ function main(){
                 function print_item(msg,data){ 
                     console.log(msg);
                     console.log(data);
-                    console.log(data.length);
+                    console.log(data.items.length);
                     content="";
-                    for(index=0;index<data.length;index++){
+                    for(index=0;index<data.items.length;index++){
                             
-                        var id= data[index].codice;            
-                        var nome= data[index].nome;
-                        var descrizione= data[index].descrizione;                           
-                        var immagine= data[index].imgs[0];
-                        var quantita= data[index].binner;
+                        var id= data.items[index].codice;            
+                        var nome= data.items[index].nome;
+                        var descrizione= data.items[index].descrizione;                           
+                        var immagine= data.items[index].imgs[0];
+                        var quantita= data.items[index].binner;
                         if(quantita==0){
                             quantita=1;
                         }      

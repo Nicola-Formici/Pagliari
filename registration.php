@@ -88,12 +88,32 @@ function main(){
                                 </div>
                             </div>
                         </div>
-                        <input id="button_registration" class="btn btn-primary btn-lg btn-block" type="submit" value="Iscriviti" onclick="data_registration()">
+                        <input id="button_registration" class="btn btn-primary btn-lg btn-block" type="submit" value="Iscriviti">
 					</form>
 				</div>
 			</div>
 		</div>		
-
+        
+        <!-- POPUP-->
+        <div id="success" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <center class="popup">
+                    <p class="add">Registrazione avvenuta con successo</p>
+                    <a id="button_acces" class="btn btn-primary btn-lg btn-block" href="./index.php">Torna alla pagina acquisti</a>
+                </center>
+                
+            </div>
+        </div>
+        <div id="fail" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <center class="popup">
+                    <p class="remove">Registrazione fallita <br> Le consigliamo di riprovare</p>
+                </center>
+                
+            </div>
+        </div>
 		<script>
             function check() {
                 var validator = $( "#registration" ).validate();
@@ -112,45 +132,62 @@ function main(){
 				}
 			}
                 
-            function data_registration(){
-                if(check()){
-                    var name= document.getElementById("firstname").value;
-                    console.log(name);
-                    var surname= document.getElementById("lastname").value;
-                    console.log(surname);
-                    var email= document.getElementById("email").value;
-                    console.log(email);
-                    var tel= document.getElementById("telephone").value;
-                    console.log(tel);
-                    var psw= document.getElementById("password").value;
-                    console.log(psw);
-                    var address= document.getElementById("indirizzo").value;
-                    console.log(address);
-                    var prov= document.getElementById("provincia").value;
-                    console.log(prov);
-                    var city= document.getElementById("citta").value;
-                    console.log(city);
-                    var cap= document.getElementById("cap").value;
-                    console.log(cap);
-                    if(document.getElementById('choose-piva').checked){
-                        var piva= document.getElementById("piva").value;
-                        console.log(piva);
-                        registration(name,surname,email,tel,psw,address,prov,city,cap,piva,null);
-                    }
-                    else{
-                        var cod_fiscale= document.getElementById("cod_fiscale").value;
-                        console.log(cod_fiscale);
-                        registration(name,surname,email,tel,psw,address,prov,city,cap,cod_fiscale,null);
-                    }  
-                }           
-            }            
-                
 			$.validator.setDefaults({
 				submitHandler: function() {
 					console.log("Registrazione avvenuta con successo")
 				}
 			});
 
+            $("#button_registration").click(function(){
+                    if(check()){  
+                        var dati = $("#registration").serialize(); //recupera tutti i valori del form automaticamente
+                        
+                        //form invio dati post ajax
+
+                        //invio
+                        $.ajax({
+                            type: "POST",
+                            url: "http://test07.dmsweb.it/__ajax__.php?action=form_registrazione",
+                            data: dati,
+                            dataType: "html",
+                            success: function(msg){
+                                console.log(msg);
+                                registration_succes();
+                            },
+                            error: function(){
+                                registration_fail();
+                            }
+
+                        });//ajax
+                    }
+            });//bottone click
+            
+            var reg_success;
+            
+            function registration_succes(){
+                reg_success = document.getElementById('success');
+                reg_success.style.display = "block";
+            }             
+
+            window.onclick = function(event) {
+                if (event.target == reg_success) {
+                    reg_success.style.display = "none";
+                }
+            }
+            
+            var reg_fail;
+            
+            function registration_fail(){
+                reg_fail = document.getElementById('fail');
+                reg_fail.style.display = "block";
+            }             
+
+            window.onclick = function(event) {
+                if (event.target == reg_fail) {
+                    reg_fail.style.display = "none";
+                }
+            }
+            
 			$().ready(function() {
 				// validate signup form on keyup and submit
 				$("#registration").validate({
@@ -182,8 +219,14 @@ function main(){
 							required: true,
 							digits: true
 						},
-						provincia: "required",
-						citta: "required",
+                        provincia: {
+							required: true,
+							lettersonly: true
+						},
+						citta: {
+							required: true,
+							lettersonly: true
+						},
 						cap: {
 							required: true,
 							digits: true
@@ -196,11 +239,11 @@ function main(){
 					messages: {
 						firstname:{
 							required: "Inserisci nome",
-							lettersonly: "Puoi usare solo lettere",
+							lettersonly: "Puoi inseire solo lettere",
 						},
 						lastname:{
 							required: "Inserisci cognome",
-							lettersonly: "Puoi usare solo lettere",
+							lettersonly: "Puoi inseire solo lettere",
 						},
 						indirizzo: "Inserisci indirizzo",
 						password: {
@@ -218,8 +261,14 @@ function main(){
 							required: "Inserisci numero di telefono",
 							digits: "Inserisci solo numeri"
 						},
-						provincia: "Inserisci la provincia di residenza",
-						citta: "Inserisci la città di residenza",
+						provincia:{
+                            required: "Inserisci la provincia di residenza",
+                            lettersonly: "Puoi inseire solo lettere"
+                        },
+						citta:{
+                            required: "Inserisci la città di residenza",
+                            lettersonly: "Puoi inseire solo lettere"
+                        },
 						cap:{
 							required: "Inserisci cap",
 							digits: "inserisci solo numeri"
@@ -231,7 +280,6 @@ function main(){
 					}
 				});	
 			});
-			
 		</script>
 __end__;
 	return layout($content, $title="", "Vendita mezzi agricoli e lavorazioni di carpenteria meccanica.");

@@ -25,13 +25,6 @@ function cart_page(page, on_success) {
     );
 }
 
-function registration(name,surname,email,tel,psw,address,prov,city,cap,cod_fiscale,on_success) {
-    return ajax_get('__ajax__.php?a=form_registrazione', /*da finire*/
-        function(err){console.log(err)},
-        function(msg,data){ console.log(msg);console.log(data); }
-    );
-}
-
 function item_page(page, on_success) {
     return ajax_get('__ajax__.php?a=item_page&page='+page,
         function(err){console.log(err)},
