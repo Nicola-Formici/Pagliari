@@ -9,7 +9,7 @@ function main(){
 				<div class="col-12 col-lg-04 ">
 					<h2> Registrazione </h2>
 					<hr class="mb-4">
-					<form  class="needs-validation" id="registration" method="get" action=""> 
+					<form  class="needs-validation" id="registration" action=""> 
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="firstname">Nome</label>
@@ -93,33 +93,11 @@ function main(){
 				</div>
 			</div>
 		</div>		
-        
-        <!-- POPUP-->
-        <div id="success" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-                <center class="popup">
-                    <p class="add">Registrazione avvenuta con successo</p>
-                    <a id="button_acces" class="btn btn-primary btn-lg btn-block" href="./index.php">Torna alla pagina acquisti</a>
-                </center>
-                
-            </div>
-        </div>
-        <div id="fail" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-                <center class="popup">
-                    <p class="remove">Registrazione fallita <br> Le consigliamo di riprovare</p>
-                </center>
-                
-            </div>
-        </div>
 		<script>
             function check() {
                 var validator = $( "#registration" ).validate();
                 return validator.form();        
             }
-            
             
 			function ability_disability(){
 				if(document.getElementById('choose-piva').checked){
@@ -152,15 +130,33 @@ function main(){
                             dataType: "html",
                             success: function(msg){
                                 console.log(msg);
+                                show_div('add','success','Registrazione avvenuta con successo');
                                 registration_succes();
                             },
                             error: function(){
-                                registration_fail();
+                                show_div('remove','fail','Registrazione fallita <br> Le consigliamo di riprovare');
+                                registration_fail();                               
                             }
 
                         });//ajax
                     }
             });//bottone click
+            
+            function show_div(p_class , div_id , msg){
+                content='';
+                content+='<div id="'+div_id+'" class="modal">'
+                    content+='<div class="modal-content">'
+                        content+='<center class="popup">'
+                            content+='<p class="'+p_class+'">'+msg+'</p>'
+                            if(div_id== 'success'){
+                                content+='<a id="button_acces" class="btn btn-primary btn-lg btn-block" href="./index.php">Torna alla pagina <br> acquisti</a>'
+                            }
+                        content+='</center>'
+                    content+='</div>'
+                content+='</div>'
+                
+                document.getElementById("div_registration").innerHTML = content;
+            }
             
             var reg_success;
             
