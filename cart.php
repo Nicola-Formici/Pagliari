@@ -14,7 +14,10 @@ function content(){
        
        <script>                    
             cart_page(page=1, print_cart);
-                                   
+             
+            var quantita;
+            var id;
+            
             function print_cart(msg,data){ 
                 console.log(msg);
                 console.log(data);
@@ -38,12 +41,12 @@ function content(){
                     content +='<tbody>'
                     for(index=0;index<data.rows.length;index++){
                            
-                        var id= data.rows[index].codice;
+                        id= data.rows[index].codice;
                         var nome= data.rows[index].nome;            
                         var immagine= data.rows[index].imgs[0];
                         var prezzo= 0;
                         var quantitaMin= data.rows[index].binner;
-                        var quantita= data.rows[index].qta;
+                        quantita= data.rows[index].qta;
                        
                         var sub= 0;
                         
@@ -62,8 +65,8 @@ function content(){
                                 content +='</td>'
                                 content +='<td data-th="Subtotal" class="text-center">'+sub+'€</td>'
                                 content +='<td class="actions" data-th="">'
-                                    content +='<button class="btn btn btn-sm" onclick="add(&quot;'+id+'&quot;,'+quantita+')"><i class="far fa-edit"></i></button>&emsp;'
-                                    content +='<button class="btn btn-danger btn-sm" onclick="remuve(&quot;'+id+'&quot;)"><i class="far fa-trash-alt"></i></button>'
+                                    content +='<button class="btn btn btn-sm" onclick="add_qta(&quot;'+id+'&quot;,'+quantita+')"><i class="far fa-edit"></i></button>&emsp;'
+                                    content +='<button class="btn btn-danger btn-sm" onclick="remuve_item(&quot;'+id+'&quot;)"><i class="far fa-trash-alt"></i></button>'
                                 content +='</td>'
                             content +='</tr>' 
                     }
@@ -81,22 +84,26 @@ function content(){
                 }
             }
 
-            function remuve(item_id){
+            function remuve_item(item_id){
                 console.log(item_id);
                 cart_remove(item_id, null);
                 location.reload();
+                show_message('warning',"Rimosso dal carrello.");
             }
 
-            function add(item_id ,qta_now){
+            function add_qta(item_id ,qta_now){
                 console.log("Quantita ora: "+qta_now);
                 var nameValue= "quantita"+item_id;   
                 console.log(nameValue);
                 var quantity = $("input[type=number][name="+nameValue+"]").val();
                 console.log(quantity);
                 if(quantity != qta_now){
-                    cart_add(item_id, quantity, null);    
-                    location.reload();
-                }                                
+                    cart_add(item_id, quantity, null);          
+                    show_message('success',"Quantità aggiornata con successo.");  
+                    setTimeout(function(){ location.reload(); }, 2000);
+                    
+                }  
+               
             }
         </script>
 __END__;

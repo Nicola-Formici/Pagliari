@@ -65,13 +65,14 @@ function main(){
                 function page(){                  
                     item_page(page_now,print_item);
                     var content = ''
-                            content += '<ul  class="pagination justify-content-center">'
-                                content +='<li class="page-item"><a class="page-link" href="#" tabindex="-1" onclick="load_item_page_prec()">Precedente</a></li>';
-                                    for(var i=1;i<=numPage;i++){
-                                        content +='<li class="page-item"><a class="page-link" href="#" onclick="load_item_page('+i+')">'+i+'</a></li>'
-                                    }
-                                content +='<li class="page-item"><a class="page-link" href="#" onclick="load_item_page_succ()">Successiva</a></li>'
-                            content +='</ul>'
+                    content += '<ul  class="pagination justify-content-center">'
+                        content +='<li class="page-item"><a class="page-link" href="#fine_page" tabindex="-1" onclick="load_item_page_prec()">Precedente</a></li>';
+                            for(var i=1;i<=numPage;i++){
+                                content +='<li class="page-item"><a class="page-link" href="#fine_page" onclick="load_item_page('+i+')">'+i+'</a></li>'
+                            }
+                        content +='<li class="page-item"><a class="page-link" href="#fine_page" onclick="load_item_page_succ()">Successiva</a></li>'
+                    content +='</ul>'
+                    content +='<a name="fine_page">'
                     document.getElementById("pages").innerHTML += content;
                 }
                 page();
@@ -80,6 +81,7 @@ function main(){
                     page_now=page;
                     console.log('pagina '+page_now);
                     item_page(page,print_item);
+                    
                 }
                 
                 function load_item_page_prec(){
@@ -97,22 +99,7 @@ function main(){
                         item_page(page_now,print_item);
                     }
                 }
-                
-                function add_button(item_id){  
-                    console.log(item_id);
-                    var nameValue= 'quantita'+item_id;
-                    console.log(nameValue);
-                    var quantity = $("input[type=number][name="+nameValue+"]").val();
-                    console.log(quantity);
-                    cart_add(item_id, quantity, null);
-                    $('#'+item_id).html("<p class='add'>&emsp;Aggiunto al carrello</p>"); 
-                }
-                
-                function remove_button(item_id){
-                    console.log(item_id);
-                    cart_remove(item_id, null );
-                    $('#'+item_id).html("<p class='remove'>&emsp;Rimosso dal carrello</p>"); 
-                }
+                  
                     
                 $("#treeview").hummingbird();
                 $( "#checkAll" ).click(function() {
@@ -148,15 +135,15 @@ function main(){
                                 content +='</div>'
                                 content +='<div class="card-body">'
                                     content +='<p id="'+id+'"></p>';
-                                    content +='<p class="card-text"><b>'+nome+'</b></p>'
+                                    content +='<p id="title" class="card-text"><b>'+nome+'</b></p>'
                                     content +='<div class="d-flex justify-content-between align-items-center">'
                                         content +='<div class="btn-group">'
                                             content +='<span>Quantità:&emsp; </span>'
                                             content +='<input class="quantita" type="number" name="quantita'+id+'" value="'+quantita+'" step="1" min="'+quantita+'" style="width:50%">'
                                         content +='</div>'
                                         content +='<div class="btn-group">'
-                                            content +='<button type="button" class="btn btn-light" onclick="add_button(&quot;'+id+'&quot;)"><i class="fas fa-cart-plus" ></i></button>'
-                                            content +='<button type="button" class="btn btn-danger btn-sm" onclick="remove_button(&quot;'+id+'&quot;)"><i class="far fa-trash-alt"></i></button>'
+                                            content +='<button id="add_'+id+'" type="button" class="btn btn-light" onclick="add(&quot;'+id+'&quot;)"><i class="fas fa-cart-plus" ></i></button>'
+                                            content +='<button id="remove_'+id+'" type="button" class="btn btn-danger btn-sm" onclick="remove(&quot;'+id+'&quot;)"><i class="far fa-trash-alt"></i></button>'
                                         content +='</div>'
                                     content +='</div>'
                                 content +='</div>'

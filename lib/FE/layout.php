@@ -44,7 +44,8 @@ function layout($content, $title= "Al.Pa.car", $description="" ) {
 		
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 		
-		
+		<script src="./js/notify.js"></script>
+      
         <script src="./js/json.js"></script>
 		<script src="./js/data.js"></script>
 		
@@ -59,7 +60,7 @@ function layout($content, $title= "Al.Pa.car", $description="" ) {
         	
   </head>
 
-	<body>
+	<body class="body">
 		<header>
 			<div class="navbar navbar-dark bg-light shadow-sm " >
 				<nav class="navbar navbar-light">

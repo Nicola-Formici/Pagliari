@@ -55,3 +55,4 @@
 [2018/10/12 10:23:22] Undefined class constant 'expand' /var/www/html/pagliari/lib/BE/Data.php 86
 [2018/10/17 16:11:06] Undefined variable: number /var/www/html/pagliari/checkout.php 22
 [2018/10/17 16:12:14] Undefined variable: number /var/www/html/pagliari/checkout.php 22
+[2018/10/25 14:15:26] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'pagliari.users' doesn't exist /var/www/html/pagliari/lib/BE/vendor/tableeditor/web.php 1882

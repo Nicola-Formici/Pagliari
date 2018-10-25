@@ -126,7 +126,7 @@ function ajax_get(url, on_req_error, on_req_success, cb_context) {
         type: 'GET',
         dataType: 'json',
         success: function (resp) {
-            var msg = coalesce(resp.msg, '');
+            var msg = coalesce(resp.message, '');
             if (ajax_is_error(resp)) {
                 on_req_error.call(null, msg);
             }
@@ -158,7 +158,7 @@ function ajax_post(url, prams_data, on_req_error, on_req_success, cb_context) {
         dataType: 'json',
         data: prams_data,
         success: function (resp) {
-            var msg = coalesce(resp.msg, '');
+            var msg = coalesce(resp.message, '');
             if (ajax_is_error(resp)) {
                 on_req_error.call(null, msg);
             }

@@ -1,23 +1,23 @@
 <?php
 include_once './lib/lib.php';
 
-function main(){	
-	// wrapping con contentuto rimanente
-	$content = <<<__end__
+function main() {
+    // wrapping con contentuto rimanente
+    $content = <<<__end__
         <div class="container" id="div_registration">
-			<div class="row">
-				<div class="col-12 col-lg-04 ">
-					<h2> Registrazione </h2>
-					<hr class="mb-4">
-					<form  class="needs-validation" id="registration" action=""> 
+            <div class="row">
+                <div class="col-12 col-lg-04 ">
+                    <h2> Registrazione </h2>
+                    <hr class="mb-4">
+                    <form  class="needs-validation" id="registration" method="POST" action="">
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="firstname">Nome</label>
-                                <input class="form-control" id="firstname" name="firstname" type="text">
+                                <label for="nome">Nome</label>
+                                <input class="form-control" id="nome" name="nome" type="text">
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="lastname">Cognome</label>
-                                <input class="form-control" id="lastname" name="lastname" type="text">
+                                <label for="cognome">Cognome</label>
+                                <input class="form-control" id="cognome" name="cognome" type="text">
                             </div>
                         </div>
                         <div class="mb-3">
@@ -63,18 +63,18 @@ function main(){
                                 <input class="form-control" type="text" id="cap" name="cap" placeholder="" required>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-6 mb-3">
                             <div class="custom-control custom-radio">
-                                <input id="choose-piva" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="" onclick="ability_disability()" >
+                                <input id="choose-piva" name="payment_method" type="radio" class="custom-control-input" checked="" required="" value="1" onclick="ability_disability()" >
                                 <label class="custom-control-label" for="choose-piva">Inserisci p.iva</label>
                             </div>
                             <div class="custom-control custom-radio">
-                                <input id="choose-cod-fiscale" name="paymentMethod" type="radio" class="custom-control-input" required="" onclick="ability_disability()">
+                                <input id="choose-cod-fiscale" name="payment_method" type="radio" class="custom-control-input" required="" value="2" onclick="ability_disability()">
                                 <label class="custom-control-label" for="choose-cod-fiscale">Inserisci codice fiscale</label>
                             </div>
                         </div>
-                        <div class="row">	
+                        <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="username">P.IVA</label>
                                 <div class="input-group">
@@ -89,197 +89,152 @@ function main(){
                             </div>
                         </div>
                         <input id="button_registration" class="btn btn-primary btn-lg btn-block" type="submit" value="Iscriviti">
-					</form>
-				</div>
-			</div>
-		</div>		
-		<script>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script>
             function check() {
                 var validator = $( "#registration" ).validate();
-                return validator.form();        
+                return validator.form();
             }
-            
-			function ability_disability(){
-				if(document.getElementById('choose-piva').checked){
-					document.getElementById('piva').disabled = false;
-					document.getElementById('cod_fiscale').disabled = true;					
-				}
-				else{
-					document.getElementById('piva').disabled = true;
-					document.getElementById('cod_fiscale').disabled = false;		
-				}
-			}
-                
-			$.validator.setDefaults({
-				submitHandler: function() {
-					console.log("Registrazione avvenuta con successo")
-				}
-			});
 
-            $("#button_registration").click(function(){
-                    if(check()){  
+            function ability_disability(){
+                if(document.getElementById('choose-piva').checked){
+                    document.getElementById('piva').disabled = false;
+                    document.getElementById('cod_fiscale').disabled = true;
+                }
+                else{
+                    document.getElementById('piva').disabled = true;
+                    document.getElementById('cod_fiscale').disabled = false;
+                }
+            }
+
+            $.validator.setDefaults({
+                submitHandler: function() {
+                    // console.log("Registrazione avvenuta con successo")
+
+                    if(check()){
                         var dati = $("#registration").serialize(); //recupera tutti i valori del form automaticamente
-                        
                         //form invio dati post ajax
-
-                        //invio
-                        $.ajax({
-                            type: "POST",
-                            url: "http://test07.dmsweb.it/__ajax__.php?action=form_registrazione",
-                            data: dati,
-                            dataType: "html",
-                            success: function(msg){
+                        ajax_post(
+                            "/__ajax__.php?action=form_registrazione",
+                            dati,
+                            // error subroutine
+                            function(msg){
                                 console.log(msg);
-                                show_div('add','success','Registrazione avvenuta con successo');
-                                registration_succes();
+                                show_message('danger', msg);                               
                             },
-                            error: function(){
-                                show_div('remove','fail','Registrazione fallita <br> Le consigliamo di riprovare');
-                                registration_fail();                               
+                            // success subroutine
+                            function(msg){
+                                console.log(msg);
+                                show_message('success', msg);
+                                show_message('info', 'Stai per essere ridiretto verso la pagina di login');
+                                setTimeout(function(){ window.location.href = './login.php';  }, 3000);
                             }
-
-                        });//ajax
+                        );
                     }
-            });//bottone click
-            
-            function show_div(p_class , div_id , msg){
-                content='';
-                content+='<div id="'+div_id+'" class="modal">'
-                    content+='<div class="modal-content">'
-                        content+='<center class="popup">'
-                            content+='<p class="'+p_class+'">'+msg+'</p>'
-                            if(div_id== 'success'){
-                                content+='<a id="button_acces" class="btn btn-primary btn-lg btn-block" href="./index.php">Torna alla pagina <br> acquisti</a>'
-                            }
-                        content+='</center>'
-                    content+='</div>'
-                content+='</div>'
-                
-                document.getElementById("div_registration").innerHTML = content;
-            }
-            
-            var reg_success;
-            
-            function registration_succes(){
-                reg_success = document.getElementById('success');
-                reg_success.style.display = "block";
-            }             
-
-            window.onclick = function(event) {
-                if (event.target == reg_success) {
-                    reg_success.style.display = "none";
                 }
-            }
-            
-            var reg_fail;
-            
-            function registration_fail(){
-                reg_fail = document.getElementById('fail');
-                reg_fail.style.display = "block";
-            }             
+            });
 
-            window.onclick = function(event) {
-                if (event.target == reg_fail) {
-                    reg_fail.style.display = "none";
-                }
-            }
             
-			$().ready(function() {
-				// validate signup form on keyup and submit
-				$("#registration").validate({
-					rules: {
-						firstname: {
-							required: true,
-							lettersonly: true
-						},
-						lastname: {
-							required: true,
-							lettersonly: true
-						},
-						indirizzo: "required",
-						password: {
-							required: true,
-							minlength: 5
-						},
-						confirm_password: {
-							required: true,
-							minlength: 5,
-							equalTo: "#password"
-						},
-						email: {
-							required: true,
-							email: true
-						},
-						cod_fiscale: "required",
-						telephone: {
-							required: true,
-							digits: true
-						},
+
+            $().ready(function() {
+                // validate signup form on keyup and submit
+                $("#registration").validate({
+                    rules: {
+                        nome: {
+                            required: true,
+                            lettersonly: true
+                        },
+                        cognome: {
+                            required: true,
+                            lettersonly: true
+                        },
+                        indirizzo: "required",
+                        password: {
+                            required: true,
+                            minlength: 5
+                        },
+                        confirm_password: {
+                            required: true,
+                            minlength: 5,
+                            equalTo: "#password"
+                        },
+                        email: {
+                            required: true,
+                            email: true
+                        },
+                        cod_fiscale: "required",
+                        telephone: {
+                            required: true,
+                            digits: true
+                        },
                         provincia: {
-							required: true,
-							lettersonly: true
-						},
-						citta: {
-							required: true,
-							lettersonly: true
-						},
-						cap: {
-							required: true,
-							digits: true
-						},
-						piva:{
-							required: true,
-							digits: true
-						}
-					},
-					messages: {
-						firstname:{
-							required: "Inserisci nome",
-							lettersonly: "Puoi inseire solo lettere",
-						},
-						lastname:{
-							required: "Inserisci cognome",
-							lettersonly: "Puoi inseire solo lettere",
-						},
-						indirizzo: "Inserisci indirizzo",
-						password: {
-							required: "Inserisci password",
-							minlength: "La password deve essere almeno di 5 caratteri"
-						},
-						confirm_password: {
-							required: "Reinserisci password",
-							minlength: "La password deve essere almeno di 5 caratteri",
-							equalTo: "Inserisci la stessa password"
-						},
-						cod_fiscale: "Inserisci il codice fiscale",
-						email: "inserisci email",
-						telephone:{
-							required: "Inserisci numero di telefono",
-							digits: "Inserisci solo numeri"
-						},
-						provincia:{
+                            required: true,
+                            lettersonly: true
+                        },
+                        citta: {
+                            required: true,
+                            lettersonly: true
+                        },
+                        cap: {
+                            required: true,
+                            digits: true
+                        },
+                        piva:{
+                            required: true,
+                            digits: true
+                        }
+                    },
+                    messages: {
+                        nome:{
+                            required: "Inserisci nome",
+                            lettersonly: "Puoi inseire solo lettere",
+                        },
+                        cognome:{
+                            required: "Inserisci cognome",
+                            lettersonly: "Puoi inseire solo lettere",
+                        },
+                        indirizzo: "Inserisci indirizzo",
+                        password: {
+                            required: "Inserisci password",
+                            minlength: "La password deve essere almeno di 5 caratteri"
+                        },
+                        confirm_password: {
+                            required: "Reinserisci password",
+                            minlength: "La password deve essere almeno di 5 caratteri",
+                            equalTo: "Inserisci la stessa password"
+                        },
+                        cod_fiscale: "Inserisci il codice fiscale",
+                        email: "inserisci email",
+                        telephone:{
+                            required: "Inserisci numero di telefono",
+                            digits: "Inserisci solo numeri"
+                        },
+                        provincia:{
                             required: "Inserisci la provincia di residenza",
                             lettersonly: "Puoi inseire solo lettere"
                         },
-						citta:{
+                        citta:{
                             required: "Inserisci la città di residenza",
                             lettersonly: "Puoi inseire solo lettere"
                         },
-						cap:{
-							required: "Inserisci cap",
-							digits: "inserisci solo numeri"
-						},
-						piva: {
-							required: "Inserisci p.iva",
-							digits: "inserisci solo numeri"
-						}
-					}
-				});	
-			});
-		</script>
+                        cap:{
+                            required: "Inserisci cap",
+                            digits: "inserisci solo numeri"
+                        },
+                        piva: {
+                            required: "Inserisci p.iva",
+                            digits: "inserisci solo numeri"
+                        }
+                    }
+                });
+            });
+        </script>
 __end__;
-	return layout($content, $title="", "Vendita mezzi agricoli e lavorazioni di carpenteria meccanica.");
+    return layout($content, $title="", "Vendita mezzi agricoli e lavorazioni di carpenteria meccanica.");
 }
-			
-echo main();		
+
+echo main();
 ?>

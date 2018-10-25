@@ -100,21 +100,6 @@ function main(){
                 }
             });
             
-            function add_button(item_id){
-                var nameValue= "quantita"+item_id;   
-                console.log(nameValue);
-                var quantity = $("input[type=number][name="+nameValue+"]").val();
-                console.log(quantity);
-                cart_add(item_id, quantity, null);
-                $('#'+item_id).html("<p class='add'>&emsp;Aggiunto al carrello</p>"); 
-            }
-            
-            function remove_button(item_id){
-                console.log(item_id);
-                cart_remove(item_id, null );
-                $('#'+item_id).html("<p class='remove'>&emsp;Rimosso dal carrello</p>");
-            }
-            
             function modify_description(descrizione){
                 var true_description='';
                 for(var i=0; i< descrizione.length; i++){
@@ -215,9 +200,10 @@ function main(){
                         content +='<div class="btn-group">'
                             content +='<span>Quantità:&emsp; </span><input class="quantita" type="number" name="quantita'+id+'" value="'+quantita+'" step="1" min="'+quantita+'" style="width:50%">'
                         content +='</div>'
-                        content +='<button type="button" class="btn btn-light" onclick="add_button(&quot;'+id+'&quot;)"><i class="fas fa-cart-plus"></i></button>'
-                        content +='<button type="button" class="btn btn-danger btn-sm" onclick="remove_button(&quot;'+id+'&quot;)"><i class="far fa-trash-alt"></i></button>'
+                        content +='<button id="add_'+id+'" type="button" class="btn btn-light" onclick="add(&quot;'+id+'&quot;)"><i class="fas fa-cart-plus"></i></button>'
+                        content +='<button id="remove_'+id+'" type="button" class="btn btn-danger btn-sm" onclick="remove(&quot;'+id+'&quot;)"><i class="far fa-trash-alt"></i></button>'
                         content +='<p class="notifica" id="'+id+'"></p>';
+                        content +='<p class="notifica" id="qta_'+id+'"></p>';
                         
                         content +='<table class="specifiche">'
                             content +='<tr class="specifiche"><td colspan="2" class="specifiche"><h5 class="title_specifiche"><center>Specifiche</center></h5></td></tr>'
@@ -293,7 +279,30 @@ function main(){
                  document.getElementById("details").innerHTML += content;
                  popup();
             }       
-            item_details(id,print_details);          
+            item_details(id,print_details);    
+            
+            cart_page(page=1, check_is_in_cart);
+            
+            function check_is_in_cart(msg,data){
+                console.log(msg);
+                console.log(data);
+                console.log(data.rows.length);
+                
+                if(data.rows.length!=0){
+                    for(index=0;index<data.rows.length;index++){
+                        var id_cart= data.rows[index].codice;
+                        var quantita_cart= data.rows[index].qta;
+                        
+                        if(id_cart== id){
+                            $('#qta_'+id).html('<p class="information">&emsp;Elemento già presente nel carrello.<br>&emsp;Quantità:'+quantita_cart+'</p>');                           
+                        }
+                        else{
+                            $('#qta_'+id).html('');                           
+                        }
+                    }
+                }
+                
+            }
         </script>	
 __end__;
 	return layout($content, $title="", "");

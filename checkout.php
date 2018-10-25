@@ -149,55 +149,30 @@ function content(){
             $("#checkout").click(function(){
                     if(check()){  
                         var dati = $("#review").serialize(); //recupera tutti i valori del form automaticamente
-                        $.ajax({
-                            type: "POST",
-                            url: "http://test07.dmsweb.it/__ajax__.php?action=form_checkout",
-                            data: dati,
-                            dataType: "html",
-                            success: function(msg){
-                                console.log(msg);
-                                show_div('add','success','Ordine inviato con successo');
-                                check_success = document.getElementById('success');
-                                check_success.style.display ='block';    
+                        
+                        ajax_post(
+                            "/__ajax__.php?action=form_checkout",
+                            dati,
+                            // error subroutine
+                            function(msg){
+                              console.log(msg);
+                                show_message('danger', msg.message);                             
                             },
-                            error: function(){
-                                show_div('remove','fail','Invio ordine fallito <br> Le consigliamo di riprovare');
-                                check_fail = document.getElementById('fail');
-                                check_fail.style.display = "block";   
+                            // success subroutine
+                            function(msg){
+                                console.log("messaggio: "+msg);
+                                show_message('success', 'Ordine inviato con successo');
+                                show_message('info', 'Stai per essere ridiretto verso la pagina principale');
+                                setTimeout(function(){ window.location.href = './index.php';  }, 3000);
                             }
-                        });//ajax
+                        );
+                        
+                        
                         event.preventDefault();
                     }
             });//bottone click
             
-            function show_div(p_class , div_id , msg){
-                str='';
-                str+='<div id="'+div_id+'" class="modal">';
-                    str+='<div class="modal-content">';
-                        str+='<center class="popup">';
-                            str+='<p class="'+p_class+'">'+msg+'</p>';
-                            if(div_id== 'success'){
-                                str+='<a id="button_acces" class="btn btn-primary btn-lg btn-block" href="./index.php">Torna alla pagina <br> acquisti</a>';
-                            }
-                        str+='</center>';
-                    str+='</div>';
-                str+='</div>';
-
-                document.getElementById("check_body").innerHTML = str;
-            }             
-
-            window.onclick = function(event) {
-                console.log("CLICK");
-                if (event.target == check_success) {
-                    check_success.style.display = "none";
-                }
-            }
             
-            window.onclick = function(event) {
-                if (event.target == check_fail) {
-                    check_fail.style.display = "none";
-                }
-            }
         </script>  
 __END__;
   return  ($content);

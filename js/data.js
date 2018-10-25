@@ -38,3 +38,32 @@ function item_details(id, on_success) {
         on_success
     );
 }
+
+function add(item_id){  
+    console.log(item_id);
+    var nameValue= 'quantita'+item_id;
+    console.log(nameValue);
+    var quantity = $("input[type=number][name="+nameValue+"]").val();
+    console.log(quantity);
+    cart_add(item_id, quantity, null);
+                        
+    show_message('success',"Aggiunto al carrello.");
+    
+    document.getElementById('add_'+item_id).disabled = true;
+    document.getElementById('remove_'+item_id).disabled = false;
+}
+
+function remove(item_id){
+    console.log(item_id);
+    cart_remove(item_id, null );
+ 
+    show_message('warning',"Rimosso dal carrello.");
+    
+    document.getElementById('add_'+item_id).disabled = false;                          
+    document.getElementById('remove_'+item_id).disabled = true;
+}
+
+function show_message(type, msg){
+    $.notify(msg,type,"center");
+}
+

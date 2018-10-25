@@ -73,6 +73,11 @@ p.remove{
     background:rgba(256, 0, 0,0.7);
 }
 
+p.information{
+     background:rgba(153, 203, 256,0.7);
+     color:black;
+}
+
 p.notifica{
     width:40%;
 }
@@ -126,6 +131,8 @@ h5.title_specifiche{
     margin-top:20%;
 }
 
+
+
 @media (min-width: 800px){
     body{
         font-family: 'Open Sans', sans-serif;
@@ -177,3 +184,8 @@ h5.title_specifiche{
     float:left;
 }
 
+#title{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

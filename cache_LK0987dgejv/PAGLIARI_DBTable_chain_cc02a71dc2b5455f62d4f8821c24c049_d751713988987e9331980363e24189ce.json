@@ -1,0 +1,18 @@
+[
+    {
+        "ID": "16",
+        "EMAIL": "nicola.formici@gmail.com",
+        "PASSWORD": "11111",
+        "GROUP_ID": "1",
+        "data_modifica_password": "2018-10-25 17:00:44",
+        "cap": "231",
+        "citta": "safas",
+        "cognome": "Formici",
+        "indirizzo": "12swsasd",
+        "nome": "Nicola",
+        "payment_method": "1",
+        "piva": "13241243",
+        "provincia": "ddd",
+        "telephone": "123"
+    }
+]

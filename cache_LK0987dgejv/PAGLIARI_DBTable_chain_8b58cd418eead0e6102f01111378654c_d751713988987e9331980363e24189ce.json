@@ -1,0 +1,18 @@
+[
+    {
+        "ID": "1",
+        "EMAIL": "test@test.it",
+        "PASSWORD": "test",
+        "GROUP_ID": "1",
+        "data_modifica_password": "2018-10-24 15:45:11",
+        "cap": null,
+        "citta": null,
+        "cognome": null,
+        "indirizzo": null,
+        "nome": null,
+        "payment_method": null,
+        "piva": null,
+        "provincia": null,
+        "telephone": null
+    }
+]
